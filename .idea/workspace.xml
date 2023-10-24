@@ -6,20 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="b6340eca-6d1b-4428-96cb-6b0d530f4f96" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/adaptive-icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/splash.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/frontend/android">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,6 +53,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "android.gradle.sync.needed": "true",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "/Users/milespeele/IdeaProjects/Diary",
     "node.js.detected.package.eslint": "true",
@@ -67,6 +76,7 @@
       <workItem from="1697479259297" duration="11000" />
       <workItem from="1697479272703" duration="4179000" />
       <workItem from="1697811709669" duration="2411000" />
+      <workItem from="1698168788454" duration="1024000" />
     </task>
     <servers />
   </component>

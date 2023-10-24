@@ -1,0 +1,18 @@
+<lint-module
+    format="1"
+    dir="/Users/milespeele/IdeaProjects/Diary/frontend/android/app"
+    name=":app"
+    type="APP"
+    maven="Diary:app:"
+    agpVersion="8.1.0"
+    buildFolder="build"
+    bootClassPath="/Users/milespeele/Android/sdk/platforms/android-33/android.jar:/Users/milespeele/Android/sdk/build-tools/33.0.1/core-lambda-stubs.jar"
+    javaSourceLevel="11"
+    compileTarget="android-33">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>
