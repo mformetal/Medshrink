@@ -12,6 +12,16 @@ dependencyResolutionManagement {
       google()
       mavenCentral()
   }
+
+  versionCatalogs {
+      create("libs") {
+        from(files("libs.versions.toml"))
+      }
+
+      create("testLibs") {
+          from(files("testLibs.versions.toml"))
+      }
+  }
 }
 
 plugins {
@@ -19,6 +29,7 @@ plugins {
 }
 
 rootProject.name = "Diary"
+
 include(":frontend:android:app")
 include(":frontend:ios:app")
 include(":frontend:multiplatform")

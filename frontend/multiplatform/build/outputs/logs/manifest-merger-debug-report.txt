@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14236015442889147657.xml:2:13-83
-INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14236015442889147657.xml:2:13-83
+ADDED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8427639784679696386.xml:2:13-83
+INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8427639784679696386.xml:2:13-83
 	package
-		INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14236015442889147657.xml
+		INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8427639784679696386.xml
 	xmlns:android
-		ADDED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14236015442889147657.xml:2:23-81
+		ADDED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8427639784679696386.xml:2:23-81
 uses-sdk
-INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14236015442889147657.xml reason: use-sdk injection requested
-INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14236015442889147657.xml
-INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14236015442889147657.xml
+INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8427639784679696386.xml reason: use-sdk injection requested
+INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8427639784679696386.xml
+INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8427639784679696386.xml
 	android:targetSdkVersion
-		INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14236015442889147657.xml
+		INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8427639784679696386.xml
 	android:minSdkVersion
-		INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest14236015442889147657.xml
+		INJECTED from /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest8427639784679696386.xml
