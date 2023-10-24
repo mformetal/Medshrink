@@ -20,7 +20,7 @@
       jars="/Users/milespeele/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
       resolved="org.jetbrains:annotations:13.0"/>
   <library
-      name="/Users/milespeele/IdeaProjects/Diary/frontend/android@@:app::debug"
+      name="/Users/milespeele/IdeaProjects/Diary@@:frontend:android:app::debug"
       jars="/Users/milespeele/IdeaProjects/Diary/frontend/android/app/build/intermediates/compile_app_classes_jar/debug/classes.jar"
       resolved="::"/>
 </libraries>

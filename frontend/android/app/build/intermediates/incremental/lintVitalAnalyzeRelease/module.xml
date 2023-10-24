@@ -1,9 +1,9 @@
 <lint-module
     format="1"
     dir="/Users/milespeele/IdeaProjects/Diary/frontend/android/app"
-    name=":app"
+    name=":frontend:android:app"
     type="APP"
-    maven="Diary:app:"
+    maven="Diary.frontend.android:app:"
     agpVersion="8.1.0"
     buildFolder="build"
     bootClassPath="/Users/milespeele/Android/sdk/platforms/android-33/android.jar:/Users/milespeele/Android/sdk/build-tools/33.0.1/core-lambda-stubs.jar"

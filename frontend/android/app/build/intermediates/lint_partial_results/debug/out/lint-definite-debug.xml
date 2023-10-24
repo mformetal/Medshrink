@@ -10,7 +10,7 @@
             oldString="33"
             replacement="34"/>
         <location
-            file="${:app*projectDir}/build.gradle.kts"
+            file="${:frontend:android:app*projectDir}/build.gradle.kts"
             line="21"
             column="9"
             startOffset="278"

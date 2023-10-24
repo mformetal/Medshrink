@@ -1,4 +1,4 @@
-#Tue Oct 24 13:53:57 EDT 2023
+#Tue Oct 24 14:07:26 EDT 2023
 base.0=/Users/milespeele/IdeaProjects/Diary/frontend/android/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/milespeele/IdeaProjects/Diary/frontend/android/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 path.0=classes.dex

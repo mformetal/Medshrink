@@ -1,8 +1,8 @@
 <dependencies>
   <compile
-      roots="/Users/milespeele/IdeaProjects/Diary/frontend/android@@:app::debug,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10@jar,org.jetbrains:annotations:13.0@jar">
+      roots="/Users/milespeele/IdeaProjects/Diary@@:frontend:android:app::debug,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib:1.9.10@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10@jar,org.jetbrains:annotations:13.0@jar">
     <dependency
-        name="/Users/milespeele/IdeaProjects/Diary/frontend/android@@:app::debug"
+        name="/Users/milespeele/IdeaProjects/Diary@@:frontend:android:app::debug"
         simpleName=":"/>
     <dependency
         name="org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10@jar"
