@@ -20,4 +20,5 @@ plugins {
 
 rootProject.name = "Diary"
 include(":frontend:android:app")
+include(":frontend:ios:app")
 include(":frontend:multiplatform")
