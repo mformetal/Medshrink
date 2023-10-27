@@ -18,6 +18,7 @@ multiplatform {
             dependencies {
                 implementation(libs.coroutines.core)
                 implementation(libs.koin)
+                implementation(libs.ktor.client)
             }
         }
 

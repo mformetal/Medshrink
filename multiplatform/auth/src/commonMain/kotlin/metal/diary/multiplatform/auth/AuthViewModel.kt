@@ -1,14 +1,15 @@
 package metal.diary.multiplatform.auth
 
+import io.ktor.client.HttpClient
 import kotlinx.coroutines.flow.MutableStateFlow
 
-class AuthViewModel(private val repository: AuthRepository) {
+class AuthViewModel(private val client: HttpClient) {
 
     private val usernameFlow = MutableStateFlow("")
     private val passwordFlow = MutableStateFlow("")
 
     fun loginClicked() {
-        repository.login(usernameFlow.value, passwordFlow.value)
+
     }
 
     fun onUsernameInput(input: String) {

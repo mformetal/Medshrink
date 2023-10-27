@@ -4,10 +4,12 @@ import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryPlugin
 import extensions.catalog
 import extensions.intVersion
+import extensions.library
 import extensions.stringVersion
 import io.kotest.framework.multiplatform.gradle.KotestMultiplatformCompilerGradlePlugin
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
@@ -64,6 +66,10 @@ class MultiplatformLibraryPlugin : Plugin<Project> {
     }
 
     private fun Project.configureAndroid(extension: MultiplatformExtension) {
+        dependencies {
+            add(JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME, catalog().library("android-compose-runtime"))
+        }
+
         configure<LibraryAndroidComponentsExtension> {
             finalizeDsl { libraryExtension ->
                 libraryExtension.composeOptions {
