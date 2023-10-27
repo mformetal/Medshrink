@@ -9,6 +9,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 
 class LintPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -23,6 +24,10 @@ class LintPlugin : Plugin<Project> {
                 parallel = true
 
                 ignoredBuildTypes = listOf("release")
+            }
+
+            dependencies {
+                "detektPlugins"("io.gitlab.arturbosch.detekt:detekt-formatting:${catalog().stringVersion("detekt")}")
             }
         }
     }

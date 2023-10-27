@@ -9,7 +9,6 @@ pluginManagement {
 }
 
 dependencyResolutionManagement {
-  repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
   repositories {
       google()
       mavenCentral()
@@ -29,5 +28,9 @@ plugins {
 rootProject.name = "Diary"
 
 include(":android:app")
+include(":android:auth")
+include(":android:theme")
 include(":ios:app")
-include(":multiplatform")
+include(":multiplatform:auth")
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

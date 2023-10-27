@@ -1,15 +1,26 @@
+import extensions.catalog
+import extensions.intVersion
+
 plugins {
     id("androidApp")
 }
 
 android {
-    namespace = "com.metal.diary"
+    namespace = "metal.diary.app"
 
     defaultConfig {
-        applicationId = "com.metal.diary"
+        applicationId = "metal.diary.app"
 
         versionCode = 1
         versionName = "1.0"
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
+    }
+
+    buildFeatures {
+        compose = true
     }
 
     buildTypes {
@@ -19,4 +30,18 @@ android {
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
+}
+
+kotlin {
+    jvmToolchain(libs.versions.jvmVersion.get().toInt())
+}
+
+dependencies {
+    implementation(libs.android.appcompat)
+    implementation(libs.android.compose.activity)
+    implementation(libs.android.compose.material)
+    implementation(libs.android.compose.runtime)
+
+    implementation(projects.android.auth)
+    implementation(projects.android.theme)
 }

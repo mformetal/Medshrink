@@ -15,13 +15,19 @@ dependencies {
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:${libs.versions.detekt.get()}")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:${libs.versions.kotlin.get()}")
     implementation("org.jetbrains.kotlin.plugin.serialization:org.jetbrains.kotlin.plugin.serialization.gradle.plugin:${libs.versions.kotlin.get()}")
+    implementation("io.kotest.multiplatform:io.kotest.multiplatform.gradle.plugin:${libs.versions.kotest.get()}")
 }
 
 gradlePlugin {
     plugins {
-        register("AndroidApp") {
+        register("AndroidAppPlugin") {
             id = "androidApp"
             implementationClass = "plugins.android.AndroidAppPlugin"
+        }
+
+        register("AndroidLibPlugin") {
+            id = "androidLib"
+            implementationClass = "plugins.android.AndroidLibPlugin"
         }
 
         register("MultiplatformPlugin") {
