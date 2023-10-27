@@ -1,20 +1,8 @@
 plugins {
-    kotlin("multiplatform")
-
-    id("com.android.library")
+    id("multiplatform")
 }
 
-android {
-    namespace = "com.metal.diary.multiplatform"
-
-    compileSdk = 33
-}
-
-kotlin {
-    jvmToolchain(11)
-
-    androidTarget {
-        publishLibraryVariants("release", "debug")
-    }
+androidLib {
+    namespace("com.metal.diary.multiplatform")
 }
 

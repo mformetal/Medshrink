@@ -1,0 +1,19 @@
+[versions]
+kotlin = "1.9.0"
+kotest = "5.7.2"
+
+# ANDROID
+androidCompileSdk = "33"
+androidGradlePlugin = "8.1.0"
+androidMinSdk = "21"
+androidTargetSdk = "33"
+
+# JVM
+jvmVersion = "11"
+
+# LINT
+detekt = "1.23.1"
+
+[plugins]
+androidGradlePlugin = { id = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }

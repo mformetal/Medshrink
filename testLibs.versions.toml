@@ -1,7 +1,0 @@
-[versions]
-kotest = "5.7.2"
-
-[libraries]
-kotestAssertions = { group = "io.kotest", name= "kotest-runner-junit5", version.ref= "kotest" }
-kotestProperty = { group = "io.kotest", name= "kotest-property", version.ref= "kotest" }
-kotestRunner = { group = "io.kotest", name= "kotest-assertions-core", version.ref= "kotest" }

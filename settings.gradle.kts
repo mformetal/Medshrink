@@ -4,6 +4,8 @@ pluginManagement {
         google()
         mavenCentral()
     }
+
+    includeBuild("build-logic")
 }
 
 dependencyResolutionManagement {
@@ -15,11 +17,7 @@ dependencyResolutionManagement {
 
   versionCatalogs {
       create("libs") {
-        from(files("libs.versions.toml"))
-      }
-
-      create("testLibs") {
-          from(files("testLibs.versions.toml"))
+        from(files("build-logic/gradle/libs.versions.toml"))
       }
   }
 }

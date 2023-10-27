@@ -17,9 +17,9 @@
       resolved="org.jetbrains:annotations:13.0"/>
   <library
       name="/Users/milespeele/IdeaProjects/Diary@@:frontend:multiplatform::debug"
-      jars="/Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/.transforms/812842d6c829a837da74c663bd1ae894/transformed/out/jars/classes.jar:/Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/.transforms/812842d6c829a837da74c663bd1ae894/transformed/out/jars/libs/R.jar"
+      jars="/Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/.transforms/3d3e27fbcc3c07d452e8d5cfe84d6543/transformed/out/jars/classes.jar:/Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/.transforms/3d3e27fbcc3c07d452e8d5cfe84d6543/transformed/out/jars/libs/R.jar"
       resolved="Diary.frontend:multiplatform:unspecified"
-      folder="/Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/.transforms/812842d6c829a837da74c663bd1ae894/transformed/out"
+      folder="/Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/.transforms/3d3e27fbcc3c07d452e8d5cfe84d6543/transformed/out"
       manifest="AndroidManifest.xml"
       resFolder="res"
       assetsFolder="assets"
