@@ -19,6 +19,7 @@ multiplatform {
                 implementation(libs.coroutines.core)
                 implementation(libs.koin)
                 implementation(libs.ktor.client)
+                implementation(projects.multiplatform.viewmodel)
             }
         }
 
