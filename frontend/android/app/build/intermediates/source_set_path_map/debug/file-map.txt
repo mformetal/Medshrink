@@ -1,7 +1,0 @@
-com.metal.diary.app-pngs-0 /Users/milespeele/IdeaProjects/Diary/frontend/android/app/build/generated/res/pngs/debug
-com.metal.diary.app-resValues-1 /Users/milespeele/IdeaProjects/Diary/frontend/android/app/build/generated/res/resValues/debug
-com.metal.diary.app-packageDebugResources-2 /Users/milespeele/IdeaProjects/Diary/frontend/android/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.metal.diary.app-packageDebugResources-3 /Users/milespeele/IdeaProjects/Diary/frontend/android/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.metal.diary.app-merged_res-4 /Users/milespeele/IdeaProjects/Diary/frontend/android/app/build/intermediates/merged_res/debug
-com.metal.diary.app-debug-5 /Users/milespeele/IdeaProjects/Diary/frontend/android/app/src/debug/res
-com.metal.diary.app-main-6 /Users/milespeele/IdeaProjects/Diary/frontend/android/app/src/main/res

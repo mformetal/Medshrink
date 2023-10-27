@@ -1,9 +1,0 @@
-com.metal.diary.multiplatform-pngs-0 /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/generated/res/pngs/release
-com.metal.diary.multiplatform-resValues-1 /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/generated/res/resValues/release
-com.metal.diary.multiplatform-mergeReleaseResources-2 /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
-com.metal.diary.multiplatform-mergeReleaseResources-3 /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
-com.metal.diary.multiplatform-merged_res-4 /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/build/intermediates/merged_res/release
-com.metal.diary.multiplatform-androidMain-5 /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/src/androidMain/res
-com.metal.diary.multiplatform-androidRelease-6 /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/src/androidRelease/res
-com.metal.diary.multiplatform-main-7 /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/src/main/res
-com.metal.diary.multiplatform-release-8 /Users/milespeele/IdeaProjects/Diary/frontend/multiplatform/src/release/res
