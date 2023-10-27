@@ -1,7 +1,6 @@
 package metal.diary.app
 
 import android.app.Activity
-import android.os.Build
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -25,14 +24,15 @@ class DiaryActivity : ComponentActivity() {
 
         setContent {
             content {
-
             }
         }
     }
 
     @Composable
-    fun content(useDarkTheme: Boolean = isSystemInDarkTheme(),
-                content: @Composable () -> Unit) {
+    fun content(
+        useDarkTheme: Boolean = isSystemInDarkTheme(),
+        content: @Composable () -> Unit
+    ) {
         val context = LocalContext.current
         val colors =
             if (useDarkTheme) {

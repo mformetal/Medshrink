@@ -4,11 +4,12 @@ plugins {
 
 multiplatform {
     android {
-        namespace("metal.diary.multiplatform.auth")
+        namespace("metal.diary.multiplatform.viewmodel")
 
         main {
             dependencies {
                 implementation(libs.android.compose.runtime)
+                implementation(libs.android.viewmodel)
             }
         }
     }
@@ -32,7 +33,9 @@ multiplatform {
 
     ios {
         main {
-
+            dependencies {
+                implementation(libs.coroutines.core)
+            }
         }
 
         test {

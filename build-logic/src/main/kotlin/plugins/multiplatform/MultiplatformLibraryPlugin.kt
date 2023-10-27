@@ -9,12 +9,10 @@ import io.kotest.framework.multiplatform.gradle.KotestMultiplatformCompilerGradl
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.tasks.testing.Test
-import org.gradle.kotlin.dsl.apply
-import org.gradle.kotlin.dsl.configure
-import org.gradle.kotlin.dsl.create
-import org.gradle.kotlin.dsl.withType
+import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
+import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import plugins.lint.LintPlugin
 
 class MultiplatformLibraryPlugin : Plugin<Project> {
