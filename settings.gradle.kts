@@ -33,5 +33,6 @@ include(":android:theme")
 include(":ios:app")
 include(":multiplatform:auth")
 include(":multiplatform:viewmodel")
+include(":server")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

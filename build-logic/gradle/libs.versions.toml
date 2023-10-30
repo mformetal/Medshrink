@@ -40,13 +40,24 @@ ktor-logging = { module = "io.ktor:ktor-client-logging", version.ref = "ktor" }
 koin = { module = "io.insert-koin:koin-core", version = "3.5.0" }
 koin-android = { module = "io.insert-koin:koin-android", version = "3.5.0" }
 
+# SERVER
+ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
+
+logback = { module = "ch.qos.logback:logback-classic", version = "1.2.3" }
+
 # TESTING
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }
 kotest-framework-engine = { module = "io.kotest:kotest-framework-engine", version.ref = "kotest" }
 kotest-property = { module = "io.kotest:kotest-property", version.ref = "kotest" }
 kotest-junit5 = { module = "io.kotest:kotest-runner-junit5", version.ref = "kotest" }
 
+ktor-server-test = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
+
 [plugins]
 androidGradlePlugin = { id = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+# SERVER
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
