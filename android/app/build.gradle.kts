@@ -41,6 +41,8 @@ dependencies {
     implementation(libs.android.compose.activity)
     implementation(libs.android.compose.material)
     implementation(libs.android.compose.runtime)
+    implementation(libs.koin)
+    implementation(libs.koin.android)
 
     implementation(projects.android.auth)
     implementation(projects.android.theme)
