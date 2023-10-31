@@ -14,6 +14,7 @@ multiplatform {
                 implementation(libs.koin)
                 api(libs.ktor.client)
                 api(libs.ktor.client.engine)
+                api(libs.ktor.logging)
             }
         }
     }

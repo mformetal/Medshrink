@@ -25,6 +25,5 @@ fun Application.main(httpClient: HttpClient = applicationHttpClient) {
         configureRouting()
 
         auth(httpClient)
-    })
-        .start(wait = true)
+    }).start(wait = true)
 }

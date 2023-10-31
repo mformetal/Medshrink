@@ -39,7 +39,11 @@ fun AuthScreen(navigation: NavController, viewModel: AuthViewModel = koinViewMod
 
         TextField(
             value = authState.value.password,
-            visualTransformation = if (authState.value.isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
+            visualTransformation = if (authState.value.isPasswordVisible) {
+                VisualTransformation.None
+            } else {
+                PasswordVisualTransformation()
+            },
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             onValueChange = viewModel::onPasswordInput,
             singleLine = true,
