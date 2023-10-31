@@ -9,7 +9,7 @@ multiplatform {
         main {
             dependencies {
                 implementation(libs.android.compose.runtime)
-                implementation(libs.android.viewmodel)
+                api(libs.android.viewmodel)
             }
         }
     }

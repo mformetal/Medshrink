@@ -4,9 +4,11 @@ import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryPlugin
 import extensions.catalog
 import extensions.intVersion
+import extensions.library
 import extensions.stringVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.plugins.JavaPlugin
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.create
@@ -22,6 +24,11 @@ class AndroidLibPlugin : Plugin<Project> {
             apply<LintPlugin>()
 
             kotlinExtension.jvmToolchain(catalog().intVersion("jvmVersion"))
+
+            dependencies.add(
+                JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
+                catalog().library("android-compose-runtime")
+            )
 
             configure<LibraryAndroidComponentsExtension> {
                 finalizeDsl { libraryExtension ->

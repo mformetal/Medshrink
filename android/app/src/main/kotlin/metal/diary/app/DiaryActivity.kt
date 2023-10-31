@@ -16,6 +16,11 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import metal.diary.auth.AUTH_SCREEN_ROUTE
+import metal.diary.auth.AuthScreen
 
 class DiaryActivity : ComponentActivity() {
 
@@ -24,6 +29,12 @@ class DiaryActivity : ComponentActivity() {
 
         setContent {
             content {
+                val navController = rememberNavController()
+                NavHost(navController = navController, startDestination = AUTH_SCREEN_ROUTE) {
+                    composable(AUTH_SCREEN_ROUTE) {
+                        AuthScreen(navController)
+                    }
+                }
             }
         }
     }
