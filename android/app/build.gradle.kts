@@ -51,3 +51,9 @@ dependencies {
     implementation(projects.multiplatform.auth)
     implementation(projects.multiplatform.viewmodel)
 }
+
+tasks.register<Exec>("runDebug") {
+    dependsOn("installDebug")
+
+    commandLine("adb", "shell", "am", "start", "-n", "metal.diary.app/.DiaryActivity")
+}
