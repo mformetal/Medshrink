@@ -49,6 +49,7 @@ dependencies {
     implementation(projects.android.theme)
 
     implementation(projects.multiplatform.auth)
+    implementation(projects.multiplatform.network)
     implementation(projects.multiplatform.viewmodel)
 }
 

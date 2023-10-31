@@ -32,6 +32,7 @@ include(":android:auth")
 include(":android:theme")
 include(":ios:app")
 include(":multiplatform:auth")
+include(":multiplatform:network")
 include(":multiplatform:viewmodel")
 include(":server")
 

@@ -9,6 +9,7 @@ multiplatform {
         main {
             dependencies {
                 implementation(libs.android.compose.runtime)
+                implementation(libs.koin.android)
             }
         }
     }
