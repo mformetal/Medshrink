@@ -36,8 +36,7 @@ fun AuthScreen(navigation: NavController, viewModel: AuthViewModel = viewModel()
             value = authState.value.username,
             onValueChange = viewModel::onUsernameInput,
             singleLine = true,
-            label = { Text("Username") },
-            placeholder = { Text("Username") }
+            label = { Text("Username") }
         )
 
         TextField(
@@ -46,8 +45,7 @@ fun AuthScreen(navigation: NavController, viewModel: AuthViewModel = viewModel()
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
             onValueChange = viewModel::onPasswordInput,
             singleLine = true,
-            label = { Text("Password") },
-            placeholder = { Text("Password") }
+            label = { Text("Password") }
         )
 
         Button(
