@@ -21,9 +21,5 @@ val applicationHttpClient = HttpClient(CIO) {
 }
 
 fun Application.main(httpClient: HttpClient = applicationHttpClient) {
-    embeddedServer(Netty, port = 8080, host = "0.0.0.0", module = {
-        configureRouting()
-
-        auth(httpClient)
-    }).start(wait = true)
+    
 }

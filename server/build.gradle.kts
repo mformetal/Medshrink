@@ -61,3 +61,7 @@ dependencies {
     testImplementation(libs.kotest.assertions.core)
 }
 
+tasks.create("stage") {
+    dependsOn("installDist")
+}
+
