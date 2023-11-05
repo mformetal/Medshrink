@@ -1,5 +1,0 @@
-ˆ2023-10-31 11:33:45.625 [Test worker @coroutine#1] TRACE io.ktor.client.plugins.HttpPlainText - Adding Accept-Charset=UTF-8 to http:///
-¤2023-10-31 11:33:45.670 [DefaultDispatcher-worker-1 @call-context#2] INFO  ktor.test - No ktor.deployment.watch patterns specified, automatic reload is not active.
-š2023-10-31 11:33:45.836 [DefaultDispatcher-worker-1 @call-context#2] INFO  ktor.application - Autoreload is disabled because the development mode is off.
-„2023-10-31 11:33:45.858 [DefaultDispatcher-worker-1 @call-context#2] INFO  ktor.application - Application started in 0.025 seconds.
-Â2023-10-31 11:33:50.107 [Test worker @coroutine#1] TRACE i.k.client.plugins.HttpCallValidator - Processing exception java.net.BindException: Address already in use for request http://localhost/
