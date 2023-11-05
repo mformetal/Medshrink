@@ -1,5 +1,6 @@
 package metal.diary.app
 
+import HOME_SCREEN_ROUTE
 import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -19,8 +20,9 @@ import androidx.core.view.WindowCompat
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import metal.diary.multiplatform.auth.AUTH_SCREEN_ROUTE
-import metal.diary.multiplatform.auth.AuthScreen
+import metal.diary.auth.nav.AUTH_SCREEN_ROUTE
+import metal.diary.auth.ui.AuthScreen
+import metal.diary.multiplatform.home.HomeScreen
 
 class DiaryActivity : ComponentActivity() {
 
@@ -32,7 +34,10 @@ class DiaryActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 NavHost(navController, startDestination = AUTH_SCREEN_ROUTE) {
                     composable(AUTH_SCREEN_ROUTE) {
-                        AuthScreen()
+                        AuthScreen(navController)
+                    }
+                    composable(HOME_SCREEN_ROUTE) {
+                        HomeScreen()
                     }
                 }
             }

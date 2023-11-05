@@ -39,9 +39,12 @@ dependencies {
 
     implementation(projects.android.theme)
 
-    implementation(projects.multiplatform.auth)
-    implementation(projects.multiplatform.network)
-    implementation(projects.multiplatform.viewmodel)
+    implementation(projects.auth.nav)
+    implementation(projects.auth.ui)
+    implementation(projects.home.nav)
+    implementation(projects.home.ui)
+    implementation(projects.network)
+    implementation(projects.viewmodel)
 }
 
 tasks.register<Exec>("runDebug") {

@@ -2,6 +2,7 @@ package extensions
 
 import org.gradle.api.initialization.Settings
 import java.io.File
+import java.nio.file.Paths
 
 fun Settings.includeMultiplatformLibraries() {
     val multiplatformDir = File(rootDir.parentFile, "multiplatform")
@@ -12,20 +13,25 @@ fun Settings.includeMultiplatformLibraries() {
         .filter { dir ->
             File(dir, "build.gradle.kts").exists()
         }
-        .forEach { projectDir ->
+        .distinctBy { projectDir ->
             var currentDir = projectDir
-            val filePathToRoot = buildString {
+            buildString {
                 append(projectDir.name)
 
                 while (currentDir.parentFile != multiplatformDir) {
-                    append(currentDir.name)
-
                     currentDir = currentDir.parentFile
+
+                    append(currentDir.name)
                 }
             }
+        }
+        .map { projectDir ->
+            Paths.get(multiplatformDir.path).relativize(Paths.get(projectDir.path))
+        }
+        .forEach { projectPath ->
+            val gradlePath = ":${projectPath.toString().replace(File.separatorChar, ':')}"
 
-            val gradlePath = ":multiplatform:${filePathToRoot.replace(File.separatorChar, ':')}"
             include(gradlePath)
-            project(gradlePath).projectDir = File(multiplatformDir, filePathToRoot)
+            project(gradlePath).projectDir = File(multiplatformDir, projectPath.toString())
         }
 }

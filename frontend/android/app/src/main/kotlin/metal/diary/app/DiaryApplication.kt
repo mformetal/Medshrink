@@ -1,7 +1,7 @@
 package metal.diary.app
 
 import android.app.Application
-import metal.diary.multiplatform.auth.authModule
+import metal.diary.auth.ui.authModule
 import metal.diary.multiplatform.network.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
