@@ -1,0 +1,5 @@
+module org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3 => commonMain,nativeMain,concurrentMain,nativeDarwinMain
+module io.insert-koin:koin-core:3.5.0 => darwinMain,nativeMain,commonMain
+module org.jetbrains.kotlinx:atomicfu:0.21.0 => commonMain,nativeMain
+module co.touchlab:stately-concurrency:1.2.5 => commonMain,darwinMain,nativeCommonMain
+module co.touchlab:stately-common:1.2.5 => commonMain,nativeCommonMain

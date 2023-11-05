@@ -1,7 +1,6 @@
 package plugins.lint
 
 import extensions.catalog
-import extensions.intVersion
 import extensions.stringVersion
 import io.gitlab.arturbosch.detekt.DetektPlugin
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
@@ -13,7 +12,7 @@ import org.gradle.kotlin.dsl.dependencies
 
 class LintPlugin : Plugin<Project> {
     override fun apply(target: Project) {
-        with (target) {
+        with(target) {
             apply<DetektPlugin>()
 
             configure<DetektExtension> {

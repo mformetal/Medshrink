@@ -1,0 +1,2 @@
+EmptyFunctionBlock - [main] at /Users/milespeele/IdeaProjects/Diary/backend/src/main/kotlin/com/diary/Application.kt:23:70 - Signature=Application.kt${ }
+UnusedParameter - [httpClient] at /Users/milespeele/IdeaProjects/Diary/backend/src/main/kotlin/com/diary/Application.kt:23:22 - Signature=Application.kt$httpClient: HttpClient = applicationHttpClient

@@ -1,0 +1,10 @@
+metal.diary.multiplatform.auth-runtime-release-0 /Users/milespeele/.gradle/caches/transforms-3/a0142ed1c824684b975d0983e6fdce5a/transformed/runtime-release/res
+metal.diary.multiplatform.auth-pngs-1 /Users/milespeele/IdeaProjects/Diary/multiplatform/auth/build/generated/res/pngs/release
+metal.diary.multiplatform.auth-resValues-2 /Users/milespeele/IdeaProjects/Diary/multiplatform/auth/build/generated/res/resValues/release
+metal.diary.multiplatform.auth-mergeReleaseResources-3 /Users/milespeele/IdeaProjects/Diary/multiplatform/auth/build/intermediates/incremental/release/mergeReleaseResources/merged.dir
+metal.diary.multiplatform.auth-mergeReleaseResources-4 /Users/milespeele/IdeaProjects/Diary/multiplatform/auth/build/intermediates/incremental/release/mergeReleaseResources/stripped.dir
+metal.diary.multiplatform.auth-merged_res-5 /Users/milespeele/IdeaProjects/Diary/multiplatform/auth/build/intermediates/merged_res/release
+metal.diary.multiplatform.auth-androidMain-6 /Users/milespeele/IdeaProjects/Diary/multiplatform/auth/src/androidMain/res
+metal.diary.multiplatform.auth-androidRelease-7 /Users/milespeele/IdeaProjects/Diary/multiplatform/auth/src/androidRelease/res
+metal.diary.multiplatform.auth-main-8 /Users/milespeele/IdeaProjects/Diary/multiplatform/auth/src/main/res
+metal.diary.multiplatform.auth-release-9 /Users/milespeele/IdeaProjects/Diary/multiplatform/auth/src/release/res

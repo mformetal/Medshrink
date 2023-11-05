@@ -1,21 +1,15 @@
 package plugins.multiplatform
 
-import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Action
-import org.gradle.api.Project
 import org.gradle.api.model.ObjectFactory
-import org.gradle.api.tasks.SourceSet
-import org.gradle.api.tasks.SourceSetContainer
-import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.newInstance
-import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import plugins.android.AndroidLibraryConfiguration
 import plugins.ios.IosConfiguration
 import javax.inject.Inject
 
-open class MultiplatformExtension @Inject constructor(private val objects: ObjectFactory,
-    private val project: Project) {
+open class MultiplatformExtension @Inject constructor(
+    objects: ObjectFactory
+) {
 
     companion object {
         const val NAME = "multiplatform"

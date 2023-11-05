@@ -11,16 +11,19 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.api.tasks.testing.Test
-import org.gradle.kotlin.dsl.*
+import org.gradle.kotlin.dsl.apply
+import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.create
+import org.gradle.kotlin.dsl.dependencies
+import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinMultiplatformPluginWrapper
-import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 import plugins.lint.LintPlugin
 
 class MultiplatformLibraryPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
-        with (target) {
+        with(target) {
             val extension = extensions.create<MultiplatformExtension>(MultiplatformExtension.NAME)
 
             apply<KotlinMultiplatformPluginWrapper>()
@@ -29,12 +32,12 @@ class MultiplatformLibraryPlugin : Plugin<Project> {
             apply<LintPlugin>()
 
             configureAndroid(extension)
-            configureMultiplatform(extension)
+            configureMultiplatform()
             configureTests()
         }
     }
 
-    private fun Project.configureMultiplatform(extension: MultiplatformExtension) {
+    private fun Project.configureMultiplatform() {
         plugins.withId("org.jetbrains.kotlin.multiplatform") {
             configure<KotlinMultiplatformExtension> {
                 jvmToolchain(catalog().intVersion("jvmVersion"))
