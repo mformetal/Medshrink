@@ -4,11 +4,60 @@
   <component name="GradleSettings">
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
+        <compositeConfiguration>
+          <compositeBuild compositeDefinitionSource="SCRIPT">
+            <builds>
+              <build path="$PROJECT_DIR$/backend" name="Diary-Api">
+                <projects>
+                  <project path="$PROJECT_DIR$/backend" />
+                  <project path="$PROJECT_DIR$/backend/multiplatform" />
+                  <project path="$PROJECT_DIR$/multiplatform/auth" />
+                  <project path="$PROJECT_DIR$/multiplatform/network" />
+                  <project path="$PROJECT_DIR$/multiplatform/viewmodel" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/build-logic" name="build-logic">
+                <projects>
+                  <project path="$PROJECT_DIR$/build-logic" />
+                </projects>
+              </build>
+              <build path="$PROJECT_DIR$/frontend" name="diary-frontend">
+                <projects>
+                  <project path="$PROJECT_DIR$/frontend" />
+                  <project path="$PROJECT_DIR$/frontend/android" />
+                  <project path="$PROJECT_DIR$/frontend/android/app" />
+                  <project path="$PROJECT_DIR$/frontend/android/auth" />
+                  <project path="$PROJECT_DIR$/frontend/android/theme" />
+                  <project path="$PROJECT_DIR$/frontend/ios" />
+                  <project path="$PROJECT_DIR$/frontend/ios/app" />
+                  <project path="$PROJECT_DIR$/frontend/multiplatform" />
+                  <project path="$PROJECT_DIR$/multiplatform/auth" />
+                  <project path="$PROJECT_DIR$/multiplatform/network" />
+                  <project path="$PROJECT_DIR$/multiplatform/viewmodel" />
+                </projects>
+              </build>
+            </builds>
+          </compositeBuild>
+        </compositeConfiguration>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="gradleJvm" value="jbr-17" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/backend" />
+            <option value="$PROJECT_DIR$/backend/multiplatform" />
+            <option value="$PROJECT_DIR$/build-logic" />
+            <option value="$PROJECT_DIR$/frontend" />
+            <option value="$PROJECT_DIR$/frontend/android" />
+            <option value="$PROJECT_DIR$/frontend/android/app" />
+            <option value="$PROJECT_DIR$/frontend/android/auth" />
+            <option value="$PROJECT_DIR$/frontend/android/theme" />
+            <option value="$PROJECT_DIR$/frontend/ios" />
+            <option value="$PROJECT_DIR$/frontend/ios/app" />
+            <option value="$PROJECT_DIR$/frontend/multiplatform" />
+            <option value="$PROJECT_DIR$/multiplatform/auth" />
+            <option value="$PROJECT_DIR$/multiplatform/network" />
+            <option value="$PROJECT_DIR$/multiplatform/viewmodel" />
           </set>
         </option>
       </GradleProjectSettings>
