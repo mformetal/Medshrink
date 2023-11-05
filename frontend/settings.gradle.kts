@@ -1,4 +1,4 @@
-//import extensions.includeMultiplatformLibraries
+import extensions.includeMultiplatformLibraries
 
 pluginManagement {
     repositories {
@@ -19,7 +19,6 @@ dependencyResolutionManagement {
 
 plugins {
     id("settings")
-//    version "1.0.0"
 }
 
 rootProject.name = "diary-frontend"
@@ -28,5 +27,7 @@ include("android:app")
 include("android:theme")
 
 include("ios:app")
+
+includeMultiplatformLibraries()
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
