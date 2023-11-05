@@ -9,7 +9,7 @@ import javax.inject.Inject
 class SettingsPlugin @Inject constructor(private val objectFactory: ObjectFactory) : Plugin<Settings> {
 
     override fun apply(target: Settings) {
-        with (target) {
+        with(target) {
             configurePluginManagement()
 
             configureDependencyResolutionManagement()
@@ -39,9 +39,11 @@ class SettingsPlugin @Inject constructor(private val objectFactory: ObjectFactor
 
             versionCatalogs {
                 create("libs") {
-                    from(objectFactory
-                        .fileCollection()
-                        .from("${rootProject.projectDir.parentFile.path}/build-logic/gradle/libs.versions.toml"))
+                    from(
+                        objectFactory
+                            .fileCollection()
+                            .from("${rootProject.projectDir.parentFile.path}/build-logic/gradle/libs.versions.toml")
+                    )
                 }
             }
         }

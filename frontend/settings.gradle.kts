@@ -25,7 +25,6 @@ plugins {
 rootProject.name = "diary-frontend"
 
 include("android:app")
-include("android:auth")
 include("android:theme")
 
 include("ios:app")

@@ -22,14 +22,6 @@ android {
     buildFeatures {
         compose = true
     }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = true
-
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-        }
-    }
 }
 
 kotlin {
@@ -45,7 +37,6 @@ dependencies {
     implementation(libs.koin)
     implementation(libs.koin.android)
 
-    implementation(projects.android.auth)
     implementation(projects.android.theme)
 
     implementation(projects.multiplatform.auth)

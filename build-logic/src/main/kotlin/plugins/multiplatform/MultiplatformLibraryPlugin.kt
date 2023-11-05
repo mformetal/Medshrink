@@ -46,17 +46,6 @@ class MultiplatformLibraryPlugin : Plugin<Project> {
                     publishLibraryVariants("release", "debug")
                 }
 
-                listOf(
-                    iosX64(),
-                    iosArm64(),
-                    iosSimulatorArm64()
-                ).forEach { iosTarget ->
-                    iosTarget.binaries.framework {
-                        baseName = "shared"
-                        isStatic = true
-                    }
-                }
-
                 targets.configureEach {
                     compilations.configureEach {
                         kotlinOptions {

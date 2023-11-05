@@ -22,7 +22,7 @@ plugins {
     id("settings") version "1.0.0"
 }
 
-rootProject.name = "Diary-Api"
+rootProject.name = "diary-api"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 

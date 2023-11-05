@@ -4,7 +4,7 @@ plugins {
 
 multiplatform {
     android {
-        namespace("metal.diary.multiplatform.viewmodel")
+        namespace("metal.diary.multiplatform.network")
     }
 
     common {

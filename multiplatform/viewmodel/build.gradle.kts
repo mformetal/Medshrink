@@ -30,16 +30,4 @@ multiplatform {
             }
         }
     }
-
-    ios {
-        main {
-            dependencies {
-                implementation(libs.coroutines.core)
-            }
-        }
-
-        test {
-
-        }
-    }
 }

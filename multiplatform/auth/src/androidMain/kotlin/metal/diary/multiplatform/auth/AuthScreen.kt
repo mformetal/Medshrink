@@ -1,4 +1,4 @@
-package metal.diary.auth
+package metal.diary.multiplatform.auth
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,15 +14,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
-import androidx.lifecycle.viewmodel.compose.viewModel
-import androidx.navigation.NavController
-import metal.diary.multiplatform.auth.AuthViewModel
 import org.koin.androidx.compose.koinViewModel
 
-const val AUTH_SCREEN_ROUTE = "auth"
-
 @Composable
-fun AuthScreen(navigation: NavController, viewModel: AuthViewModel = koinViewModel()) {
+fun AuthScreen(viewModel: AuthViewModel = koinViewModel()) {
     val authState = viewModel.uiState.collectAsState()
 
     Column(
