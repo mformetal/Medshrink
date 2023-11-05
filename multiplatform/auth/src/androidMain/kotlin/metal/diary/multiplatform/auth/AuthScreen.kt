@@ -16,6 +16,8 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import org.koin.androidx.compose.koinViewModel
 
+const val AUTH_SCREEN_ROUTE = "auth_screen_route"
+
 @Composable
 fun AuthScreen(viewModel: AuthViewModel = koinViewModel()) {
     val authState = viewModel.uiState.collectAsState()
