@@ -1,4 +1,4 @@
-package com.diary.plugins
+package metal.diary.api
 
 import io.ktor.server.application.Application
 import io.ktor.server.application.call

@@ -16,7 +16,8 @@ class AuthViewModel(private val httpClient: HttpClient) : ViewModel() {
 
     fun loginClicked() {
         viewModelScope.launch {
-
+            val response = httpClient.get("/")
+            println("HTTP SHIT: $response")
         }
     }
 

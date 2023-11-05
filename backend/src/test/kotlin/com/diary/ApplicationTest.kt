@@ -1,7 +1,6 @@
 package com.diary
 
-import com.diary.plugins.configureRouting
-import io.kotest.matchers.should
+import metal.diary.api.configureRouting
 import io.kotest.matchers.shouldBe
 import io.ktor.client.request.get
 import io.ktor.client.statement.bodyAsText

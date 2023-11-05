@@ -16,6 +16,7 @@ multiplatform {
                 implementation(libs.android.compose.viewmodel)
                 implementation(libs.koin.android.compose)
                 implementation(projects.home.nav)
+                implementation(projects.network)
             }
         }
     }

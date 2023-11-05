@@ -1,6 +1,9 @@
 plugins {
     id("multiplatform")
 }
+dependencies {
+    implementation("io.ktor:ktor-client-logging-jvm:2.3.5")
+}
 
 multiplatform {
     android {

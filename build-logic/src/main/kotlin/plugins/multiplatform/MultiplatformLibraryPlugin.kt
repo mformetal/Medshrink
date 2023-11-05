@@ -68,11 +68,16 @@ class MultiplatformLibraryPlugin : Plugin<Project> {
                     kotlinCompilerExtensionVersion = catalog().stringVersion("composeCompiler")
                 }
 
+                libraryExtension.defaultConfig {
+                    minSdk = catalog().intVersion("androidMinSdk")
+                }
+
                 libraryExtension.buildFeatures {
                     compose = true
                 }
 
                 libraryExtension.namespace = extension.android.namespace.get()
+
                 libraryExtension.compileSdk = catalog().intVersion("androidCompileSdk")
             }
         }
