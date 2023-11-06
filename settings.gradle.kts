@@ -42,6 +42,7 @@ includeLibraryAs(":home:nav", "multiplatform/home/nav")
 includeLibraryAs(":home:ui", "multiplatform/home/ui")
 includeLibraryAs(":network", "multiplatform/network")
 includeLibraryAs(":viewmodel", "multiplatform/viewmodel")
+includeLibraryAs(":entries", "multiplatform/entries")
 
 include(":backend")
 

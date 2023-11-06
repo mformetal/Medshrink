@@ -3,6 +3,8 @@ plugins {
 }
 
 multiplatform {
+    serialization()
+
     android {
         namespace("metal.diary.home.ui")
 
@@ -23,6 +25,9 @@ multiplatform {
         main {
             dependencies {
                 api(projects.viewmodel)
+
+                implementation(projects.entries)
+                implementation(projects.network)
             }
         }
 

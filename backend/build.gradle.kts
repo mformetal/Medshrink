@@ -23,9 +23,11 @@ dependencies {
     implementation(libs.ktor.server.auth)
     implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.netty)
+    implementation(libs.ktor.server.sessions)
     implementation(libs.logback)
 
     implementation(projects.auth.dto)
+    implementation(projects.entries)
 
     testImplementation(libs.ktor.client)
     testImplementation(libs.ktor.server.test)
