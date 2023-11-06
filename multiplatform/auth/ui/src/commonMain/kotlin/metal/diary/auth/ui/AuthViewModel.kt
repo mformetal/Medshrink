@@ -13,17 +13,26 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import metal.diary.auth.dto.LoginResponse
 import metal.diary.auth.dto.LoginRequest
+import metal.diary.auth.dto.UserSession
 import metal.diary.multiplatform.viewmodel.ViewModel
+import metal.diary.network.SessionsHeaderStorage
 
-class AuthViewModel(private val httpClient: HttpClient) : ViewModel() {
+class AuthViewModel(private val httpClient: HttpClient,
+    private val sessionsHeaderStorage: SessionsHeaderStorage) : ViewModel() {
 
     private val _uiState = MutableStateFlow(AuthState())
     val uiState: StateFlow<AuthState> = _uiState.asStateFlow()
 
-    suspend fun loginClicked() : LoginResponse = httpClient.post("/login") {
+    suspend fun loginClicked() : LoginResponse {
+        val httpResponse = httpClient.post("/login") {
             contentType(ContentType.Application.Json)
             setBody(LoginRequest(_uiState.value.username, _uiState.value.password))
-        }.body<LoginResponse>()
+        }
+
+        sessionsHeaderStorage.set(httpResponse.headers[UserSession.HEADER_NAME])
+
+        return httpResponse.body<LoginResponse>()
+    }
 
     fun onUsernameInput(input: String) {
         _uiState.value = _uiState.value.copy(username = input,

@@ -24,7 +24,7 @@ class DiaryApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@DiaryApplication)
-            modules(appModule, authModule(), homeModule(),  networkModule())
+            modules(appModule, authModule(), homeModule(), networkModule())
         }
     }
 }

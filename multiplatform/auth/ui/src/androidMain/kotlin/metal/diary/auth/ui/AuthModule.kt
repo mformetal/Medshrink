@@ -6,5 +6,5 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 
 actual fun authModule(): Module = module {
-    viewModel { AuthViewModel(get(ApiClientQualifier)) }
+    viewModel { AuthViewModel(get(ApiClientQualifier), get()) }
 }

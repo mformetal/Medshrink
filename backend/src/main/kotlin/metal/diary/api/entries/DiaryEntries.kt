@@ -3,7 +3,6 @@ package metal.diary.api.entries
 import io.ktor.server.application.Application
 import io.ktor.server.application.call
 import io.ktor.server.response.respond
-import io.ktor.server.routing.Route
 import io.ktor.server.routing.delete
 import io.ktor.server.routing.get
 import io.ktor.server.routing.post
@@ -11,7 +10,7 @@ import io.ktor.server.routing.route
 import io.ktor.server.routing.routing
 import io.ktor.server.sessions.get
 import io.ktor.server.sessions.sessions
-import metal.diary.api.sessions.UserSession
+import metal.diary.auth.dto.UserSession
 import metal.diary.entries.DiaryEntry
 
 fun Application.entryRouting() {
@@ -30,13 +29,10 @@ fun Application.entryRouting() {
                 }
             }
             get("{id?}") {
-
             }
             post {
-
             }
             delete("{id?}") {
-
             }
         }
     }
