@@ -1,3 +1,5 @@
+import extensions.includeLibraryAs
+
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -25,29 +27,21 @@ dependencyResolutionManagement {
 }
 
 plugins {
+    id("settings")
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
 }
 
 rootProject.name = "Diary"
 
-include(":android:app")
-project(":android:app").projectDir = File(rootDir, "frontend/android/app")
+includeLibraryAs(":android:app", "frontend/android/app")
 
-val multiplatformDir = File(rootDir, "multiplatform")
-include(":auth:dto")
-project(":auth:dto").projectDir = File(multiplatformDir, "auth/dto")
-include(":auth:nav")
-project(":auth:nav").projectDir = File(multiplatformDir, "auth/nav")
-include(":auth:ui")
-project(":auth:ui").projectDir = File(multiplatformDir, "auth/ui")
-include(":home:nav")
-project(":home:nav").projectDir = File(multiplatformDir, "home/nav")
-include(":home:ui")
-project(":home:ui").projectDir = File(multiplatformDir, "home/ui")
-include(":network")
-project(":network").projectDir = File(multiplatformDir, "network")
-include(":viewmodel")
-project(":viewmodel").projectDir = File(multiplatformDir, "viewmodel")
+includeLibraryAs(":auth:dto", "multiplatform/auth/dto")
+includeLibraryAs(":auth:nav", "multiplatform/auth/nav")
+includeLibraryAs(":auth:ui", "multiplatform/auth/ui")
+includeLibraryAs(":home:nav", "multiplatform/home/nav")
+includeLibraryAs(":home:ui", "multiplatform/home/ui")
+includeLibraryAs(":network", "multiplatform/network")
+includeLibraryAs(":viewmodel", "multiplatform/viewmodel")
 
 include(":backend")
 

@@ -47,5 +47,10 @@ gradlePlugin {
             id = "backend-app"
             implementationClass = "plugins.backend.BackendApplicationPlugin"
         }
+
+        register("SettingsPlugin") {
+            id = "settings"
+            implementationClass = "plugins.SettingsPlugin"
+        }
     }
 }
