@@ -7,6 +7,7 @@ import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply
 import org.jetbrains.kotlin.gradle.plugin.KotlinPlatformJvmPlugin
 import org.jetbrains.kotlinx.serialization.gradle.SerializationGradleSubplugin
+import plugins.lint.LintPlugin
 
 class BackendApplicationPlugin : Plugin<Project> {
     override fun apply(target: Project) {
@@ -15,6 +16,7 @@ class BackendApplicationPlugin : Plugin<Project> {
             apply<SerializationGradleSubplugin>()
             apply<KtorGradlePlugin>()
             apply<KotlinPlatformJvmPlugin>()
+            apply<LintPlugin>()
         }
     }
 }

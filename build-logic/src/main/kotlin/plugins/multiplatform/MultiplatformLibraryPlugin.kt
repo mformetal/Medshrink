@@ -24,61 +24,27 @@ class MultiplatformLibraryPlugin : Plugin<Project> {
 
     override fun apply(target: Project) {
         with(target) {
-            val extension = extensions.create<MultiplatformExtension>(MultiplatformExtension.NAME)
+            extensions.create<MultiplatformExtension>(MultiplatformExtension.NAME)
 
             apply<KotlinMultiplatformPluginWrapper>()
             apply<KotestMultiplatformCompilerGradlePlugin>()
-            apply<LibraryPlugin>()
             apply<LintPlugin>()
 
-            configureAndroid(extension)
             configureMultiplatform()
             configureTests()
         }
     }
 
     private fun Project.configureMultiplatform() {
-        plugins.withId("org.jetbrains.kotlin.multiplatform") {
-            configure<KotlinMultiplatformExtension> {
-                jvmToolchain(catalog().intVersion("jvmVersion"))
+        configure<KotlinMultiplatformExtension> {
+            jvmToolchain(catalog().intVersion("jvmVersion"))
 
-                androidTarget {
-                    publishLibraryVariants("release", "debug")
-                }
-
-                targets.configureEach {
-                    compilations.configureEach {
-                        kotlinOptions {
-                            allWarningsAsErrors = true
-                        }
+            targets.configureEach {
+                compilations.configureEach {
+                    kotlinOptions {
+                        allWarningsAsErrors = true
                     }
                 }
-            }
-        }
-    }
-
-    private fun Project.configureAndroid(extension: MultiplatformExtension) {
-        dependencies {
-            add(JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME, catalog().library("android-compose-runtime"))
-        }
-
-        configure<LibraryAndroidComponentsExtension> {
-            finalizeDsl { libraryExtension ->
-                libraryExtension.composeOptions {
-                    kotlinCompilerExtensionVersion = catalog().stringVersion("composeCompiler")
-                }
-
-                libraryExtension.defaultConfig {
-                    minSdk = catalog().intVersion("androidMinSdk")
-                }
-
-                libraryExtension.buildFeatures {
-                    compose = true
-                }
-
-                libraryExtension.namespace = extension.android.namespace.get()
-
-                libraryExtension.compileSdk = catalog().intVersion("androidCompileSdk")
             }
         }
     }

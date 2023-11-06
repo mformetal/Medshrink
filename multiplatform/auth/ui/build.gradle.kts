@@ -3,6 +3,8 @@ plugins {
 }
 
 multiplatform {
+    serialization()
+
     android {
         namespace("metal.diary.auth.ui")
 
@@ -15,6 +17,8 @@ multiplatform {
                 implementation(libs.android.compose.runtime)
                 implementation(libs.android.compose.viewmodel)
                 implementation(libs.koin.android.compose)
+
+                implementation(projects.auth.dto)
                 implementation(projects.home.nav)
                 implementation(projects.network)
             }

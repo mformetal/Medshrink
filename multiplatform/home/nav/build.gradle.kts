@@ -5,17 +5,15 @@ plugins {
 multiplatform {
     android {
         namespace("metal.diary.home.nav")
+
+        main {
+
+        }
     }
 
     common {
         main {
 
-        }
-
-        test {
-            dependencies {
-
-            }
         }
     }
 }

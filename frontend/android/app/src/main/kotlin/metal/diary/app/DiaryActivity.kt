@@ -30,7 +30,7 @@ class DiaryActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            content {
+            Content {
                 val navController = rememberNavController()
                 NavHost(navController, startDestination = AUTH_SCREEN_ROUTE) {
                     composable(AUTH_SCREEN_ROUTE) {
@@ -46,7 +46,7 @@ class DiaryActivity : ComponentActivity() {
 }
 
 @Composable
-fun content(
+fun Content(
     useDarkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {

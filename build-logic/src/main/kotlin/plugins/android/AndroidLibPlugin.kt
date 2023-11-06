@@ -11,6 +11,7 @@ import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPlugin
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.dependencies
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinAndroidPluginWrapper
 import plugins.lint.LintPlugin
@@ -24,10 +25,10 @@ class AndroidLibPlugin : Plugin<Project> {
 
             kotlinExtension.jvmToolchain(catalog().intVersion("jvmVersion"))
 
-            dependencies.add(
-                JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME,
-                catalog().library("android-compose-runtime")
-            )
+            target.dependencies {
+                JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME(catalog().library("android-compose-runtime"))
+                "detektPlugins"("io.gitlab.arturbosch.detekt:detekt-formatting:${catalog().stringVersion("twitterDetektRules")}")
+            }
 
             configure<LibraryAndroidComponentsExtension> {
                 finalizeDsl { libraryExtension ->

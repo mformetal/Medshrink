@@ -1,11 +1,11 @@
 package com.diary
 
-import metal.diary.api.configureRouting
 import io.kotest.matchers.shouldBe
 import io.ktor.client.request.get
 import io.ktor.client.statement.bodyAsText
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.testing.testApplication
+import metal.diary.api.configureRouting
 import org.junit.Test
 
 class ApplicationTest {

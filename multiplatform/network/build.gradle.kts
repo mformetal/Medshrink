@@ -1,13 +1,12 @@
 plugins {
     id("multiplatform")
 }
-dependencies {
-    implementation("io.ktor:ktor-client-logging-jvm:2.3.5")
-}
 
 multiplatform {
     android {
         namespace("metal.diary.network")
+
+        main { }
     }
 
     common {
@@ -18,6 +17,8 @@ multiplatform {
                 api(libs.ktor.client)
                 api(libs.ktor.client.engine)
                 api(libs.ktor.logging)
+                api(libs.ktor.serialization)
+                api(libs.ktor.client.contentnegotiation)
             }
         }
     }

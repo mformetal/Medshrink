@@ -18,12 +18,14 @@ kotlin {
 dependencies {
     implementation(libs.ktor.client)
     implementation(libs.ktor.cio)
-    implementation(libs.ktor.contentnegotiation)
+    implementation(libs.ktor.server.contentnegotiation)
     implementation(libs.ktor.serialization)
     implementation(libs.ktor.server.auth)
     implementation(libs.ktor.server.core)
     implementation(libs.ktor.server.netty)
     implementation(libs.logback)
+
+    implementation(projects.auth.dto)
 
     testImplementation(libs.ktor.client)
     testImplementation(libs.ktor.server.test)

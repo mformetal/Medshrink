@@ -1,5 +1,6 @@
 import extensions.catalog
 import extensions.intVersion
+import extensions.stringVersion
 
 plugins {
     id("androidApp")
@@ -37,14 +38,14 @@ dependencies {
     implementation(libs.koin)
     implementation(libs.koin.android)
 
-    implementation(projects.android.theme)
-
     implementation(projects.auth.nav)
     implementation(projects.auth.ui)
     implementation(projects.home.nav)
     implementation(projects.home.ui)
     implementation(projects.network)
     implementation(projects.viewmodel)
+
+    detektPlugins("com.twitter.compose.rules:detekt:${catalog().stringVersion("twitterDetektRules")}")
 }
 
 tasks.register<Exec>("runDebug") {
