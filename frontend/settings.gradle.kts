@@ -28,6 +28,11 @@ include("android:theme")
 
 include("ios:app")
 
-includeMultiplatformLibraries()
+includeMultiplatformLibraries("auth:nav",
+    "auth:ui",
+    "home:nav",
+    "home:ui",
+    "network",
+    "viewmodel")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
