@@ -1,8 +1,12 @@
 package metal.diary.api.entries
 
+import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
 import io.ktor.server.application.call
+import io.ktor.server.request.receive
 import io.ktor.server.response.respond
+import io.ktor.server.response.respondText
+import io.ktor.server.routing.Route
 import io.ktor.server.routing.delete
 import io.ktor.server.routing.get
 import io.ktor.server.routing.post
@@ -14,26 +18,89 @@ import metal.diary.auth.dto.UserSession
 import metal.diary.entries.DiaryEntry
 
 fun Application.entryRouting() {
-    val sessionsData = mutableMapOf<UserSession, List<DiaryEntry>>()
+    val sessionsData = mutableMapOf<UserSession, MutableList<DiaryEntry>>()
 
     routing {
         route("/entries") {
-            get {
-                val currentSession = call.sessions.get<UserSession>()
-                if (currentSession == null) {
-                    // handle lack of auth, redirect to login or something
-                    call.respond(emptyList<DiaryEntry>())
-                } else {
-                    val entries = sessionsData[currentSession]
-                    call.respond(entries ?: emptyList())
-                }
+            installGetAllDiaryEntries(sessionsData)
+
+            installGetDiaryEntry(sessionsData)
+
+            installPostDiaryEntry(sessionsData)
+
+            installDeleteDiaryEntry(sessionsData)
+        }
+    }
+}
+
+private fun Route.installDeleteDiaryEntry(sessionsData: MutableMap<UserSession, MutableList<DiaryEntry>>) {
+    delete("{id?}") {
+        val id = call.parameters["id"] ?: return@delete call.respondText(
+            "Missing id",
+            status = HttpStatusCode.BadRequest
+        )
+
+        val currentSession = call.sessions.get<UserSession>()
+        if (currentSession == null) {
+            call.respondText("No session", status = HttpStatusCode.Unauthorized)
+        } else {
+            sessionsData[currentSession]?.removeIf { existingEntry ->
+                existingEntry.id == id
             }
-            get("{id?}") {
+        }
+    }
+}
+
+private fun Route.installPostDiaryEntry(sessionsData: MutableMap<UserSession, MutableList<DiaryEntry>>) {
+    post {
+        val currentSession = call.sessions.get<UserSession>()
+        if (currentSession == null) {
+            call.respondText("No session", status = HttpStatusCode.Unauthorized)
+        } else {
+            val entry = call.receive<DiaryEntry>()
+            val entries = sessionsData[currentSession]
+            if (entries == null) {
+                sessionsData[currentSession] = mutableListOf(entry)
+            } else {
+                entries.add(entry)
+
+                sessionsData[currentSession] = entries
             }
-            post {
-            }
-            delete("{id?}") {
-            }
+        }
+    }
+}
+
+private fun Route.installGetDiaryEntry(sessionsData: MutableMap<UserSession, MutableList<DiaryEntry>>) {
+    get("{id?}") {
+        val id = call.parameters["id"] ?: return@get call.respondText(
+            "Missing id",
+            status = HttpStatusCode.BadRequest
+        )
+
+        val currentSession = call.sessions.get<UserSession>()
+        if (currentSession == null) {
+            call.respondText("No session", status = HttpStatusCode.Unauthorized)
+        } else {
+            val entry = sessionsData[currentSession]?.find { diaryEntry ->
+                diaryEntry.id == id
+            } ?: return@get call.respondText(
+                "No entry with id $id",
+                status = HttpStatusCode.NotFound
+            )
+
+            call.respond(entry)
+        }
+    }
+}
+
+private fun Route.installGetAllDiaryEntries(sessionsData: MutableMap<UserSession, MutableList<DiaryEntry>>) {
+    get {
+        val currentSession = call.sessions.get<UserSession>()
+        if (currentSession == null) {
+            call.respondText("No session", status = HttpStatusCode.Unauthorized)
+        } else {
+            val entries = sessionsData[currentSession]
+            call.respond(entries ?: emptyList())
         }
     }
 }
