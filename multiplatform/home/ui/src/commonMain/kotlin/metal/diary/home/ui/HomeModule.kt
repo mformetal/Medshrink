@@ -1,4 +1,4 @@
-package metal.diary.multiplatform.home
+package metal.diary.home.ui
 
 import org.koin.core.module.Module
 

@@ -24,7 +24,7 @@ import metal.diary.addentry.ui.AddEntryScreen
 import metal.diary.auth.nav.AUTH_SCREEN_ROUTE
 import metal.diary.auth.ui.AuthScreen
 import metal.diary.home.nav.HOME_SCREEN_ROUTE
-import metal.diary.multiplatform.home.HomeScreen
+import metal.diary.home.ui.HomeScreen
 
 class DiaryActivity : ComponentActivity() {
 

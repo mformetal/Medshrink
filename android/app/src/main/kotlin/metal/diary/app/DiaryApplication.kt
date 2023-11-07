@@ -3,7 +3,7 @@ package metal.diary.app
 import android.app.Application
 import metal.diary.addentry.ui.addEntryModule
 import metal.diary.auth.ui.authModule
-import metal.diary.multiplatform.home.homeModule
+import metal.diary.home.ui.homeModule
 import metal.diary.network.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger

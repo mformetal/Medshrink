@@ -14,7 +14,7 @@ import kotlinx.coroutines.withContext
 import metal.diary.auth.dto.LoginResponse
 import metal.diary.auth.dto.LoginRequest
 import metal.diary.auth.dto.UserSession
-import metal.diary.multiplatform.viewmodel.ViewModel
+import metal.diary.viewmodel.ViewModel
 import metal.diary.network.SessionsHeaderStorage
 
 class AuthViewModel(private val httpClient: HttpClient,

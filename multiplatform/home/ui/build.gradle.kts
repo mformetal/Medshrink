@@ -19,6 +19,7 @@ multiplatform {
                 implementation(libs.koin.android.compose)
 
                 implementation(projects.addEntry.nav)
+                implementation(projects.home.nav)
             }
         }
     }

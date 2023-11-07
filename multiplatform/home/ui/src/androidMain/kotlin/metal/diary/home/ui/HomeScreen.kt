@@ -1,4 +1,4 @@
-package metal.diary.multiplatform.home
+package metal.diary.home.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

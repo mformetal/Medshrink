@@ -1,4 +1,4 @@
-package metal.diary.multiplatform.viewmodel
+package metal.diary.viewmodel
 
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.CoroutineScope

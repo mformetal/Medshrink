@@ -1,4 +1,4 @@
-package metal.diary.multiplatform.home
+package metal.diary.home.ui
 
 import metal.diary.network.ApiClientQualifier
 import org.koin.androidx.viewmodel.dsl.viewModel

@@ -1,4 +1,4 @@
-package metal.diary.multiplatform.home
+package metal.diary.home.ui
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import metal.diary.dto.DiaryEntry
-import metal.diary.multiplatform.viewmodel.ViewModel
+import metal.diary.viewmodel.ViewModel
 
 class HomeViewModel(private val httpClient: HttpClient) : ViewModel() {
 

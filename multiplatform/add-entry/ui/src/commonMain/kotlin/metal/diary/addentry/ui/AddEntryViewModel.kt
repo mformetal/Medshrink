@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import metal.diary.dto.CreateDiaryEntry
 import metal.diary.dto.DiaryEntry
-import metal.diary.multiplatform.viewmodel.ViewModel
+import metal.diary.viewmodel.ViewModel
 
 class AddEntryViewModel(private val httpClient: HttpClient) : ViewModel() {
 

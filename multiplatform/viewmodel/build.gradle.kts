@@ -4,7 +4,7 @@ plugins {
 
 multiplatform {
     android {
-        namespace("metal.diary.multiplatform.viewmodel")
+        namespace("metal.diary.viewmodel")
 
         main {
             dependencies {
