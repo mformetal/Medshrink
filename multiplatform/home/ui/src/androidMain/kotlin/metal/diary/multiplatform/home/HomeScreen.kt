@@ -67,13 +67,6 @@ fun HomeScreen(navController: NavController, viewModel: HomeViewModel = koinView
 
                 IconButton(
                     modifier = Modifier.weight(1f),
-                    onClick = { /* Handle navigation icon click */ }
-                ) {
-                    Icon(imageVector = Icons.Default.Search, contentDescription = "Search")
-                }
-
-                IconButton(
-                    modifier = Modifier.weight(1f),
                     onClick = {
                         navController.navigate(ADD_ENTRY_SCREEN_ROUTE)
                     }
