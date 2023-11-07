@@ -1,5 +1,3 @@
-import extensions.includeLibraryAs
-
 pluginManagement {
     repositories {
         gradlePluginPortal()
@@ -33,20 +31,20 @@ plugins {
 
 rootProject.name = "Diary"
 
-includeLibraryAs(":android:app", "android/app")
+include(":android:app")
 
-includeLibraryAs(":add-entry:dto", "multiplatform/add-entry/dto")
-includeLibraryAs(":add-entry:nav", "multiplatform/add-entry/nav")
-includeLibraryAs(":add-entry:ui", "multiplatform/add-entry/ui")
-includeLibraryAs(":auth:dto", "multiplatform/auth/dto")
-includeLibraryAs(":auth:nav", "multiplatform/auth/nav")
-includeLibraryAs(":auth:ui", "multiplatform/auth/ui")
-includeLibraryAs(":home:nav", "multiplatform/home/nav")
-includeLibraryAs(":list-entries:nav", "multiplatform/list-entries/nav")
-includeLibraryAs(":list-entries:ui", "multiplatform/list-entries/ui")
-includeLibraryAs(":network", "multiplatform/network")
-includeLibraryAs(":viewmodel", "multiplatform/viewmodel")
-includeLibraryAs(":dto", "multiplatform/dto")
+include(":add-entry:dto")
+include(":add-entry:nav")
+include(":add-entry:ui")
+include(":auth:dto")
+include(":auth:nav")
+include(":auth:ui")
+include(":home:nav")
+include(":list-entries:nav")
+include(":list-entries:ui")
+include(":network")
+include(":viewmodel")
+include(":dto")
 
 include(":backend")
 
