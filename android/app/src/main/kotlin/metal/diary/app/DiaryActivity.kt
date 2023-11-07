@@ -1,6 +1,5 @@
 package metal.diary.app
 
-import HOME_SCREEN_ROUTE
 import android.app.Activity
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -24,6 +23,7 @@ import metal.diary.addentry.nav.ADD_ENTRY_SCREEN_ROUTE
 import metal.diary.addentry.ui.AddEntryScreen
 import metal.diary.auth.nav.AUTH_SCREEN_ROUTE
 import metal.diary.auth.ui.AuthScreen
+import metal.diary.home.nav.HOME_SCREEN_ROUTE
 import metal.diary.multiplatform.home.HomeScreen
 
 class DiaryActivity : ComponentActivity() {

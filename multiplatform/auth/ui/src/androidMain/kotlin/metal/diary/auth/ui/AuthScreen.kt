@@ -1,6 +1,5 @@
 package metal.diary.auth.ui
 
-import HOME_SCREEN_ROUTE
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -20,6 +19,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.navigation.NavController
 import kotlinx.coroutines.launch
+import metal.diary.home.nav.HOME_SCREEN_ROUTE
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
