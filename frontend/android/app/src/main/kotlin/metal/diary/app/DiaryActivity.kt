@@ -20,6 +20,8 @@ import androidx.core.view.WindowCompat
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import metal.diary.addentry.nav.ADD_ENTRY_SCREEN_ROUTE
+import metal.diary.addentry.ui.AddEntryScreen
 import metal.diary.auth.nav.AUTH_SCREEN_ROUTE
 import metal.diary.auth.ui.AuthScreen
 import metal.diary.multiplatform.home.HomeScreen
@@ -37,7 +39,10 @@ class DiaryActivity : ComponentActivity() {
                         AuthScreen(navController)
                     }
                     composable(HOME_SCREEN_ROUTE) {
-                        HomeScreen()
+                        HomeScreen(navController)
+                    }
+                    composable(ADD_ENTRY_SCREEN_ROUTE) {
+                        AddEntryScreen(navController)
                     }
                 }
             }

@@ -35,6 +35,9 @@ rootProject.name = "Diary"
 
 includeLibraryAs(":android:app", "frontend/android/app")
 
+includeLibraryAs(":add-entry:dto", "multiplatform/add-entry/dto")
+includeLibraryAs(":add-entry:nav", "multiplatform/add-entry/nav")
+includeLibraryAs(":add-entry:ui", "multiplatform/add-entry/ui")
 includeLibraryAs(":auth:dto", "multiplatform/auth/dto")
 includeLibraryAs(":auth:nav", "multiplatform/auth/nav")
 includeLibraryAs(":auth:ui", "multiplatform/auth/ui")

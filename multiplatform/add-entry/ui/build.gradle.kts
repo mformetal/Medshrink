@@ -3,10 +3,8 @@ plugins {
 }
 
 multiplatform {
-    serialization()
-
     android {
-        namespace("metal.diary.auth.ui")
+        namespace("metal.diary.addentry.ui")
 
         main {
             dependencies {
@@ -18,7 +16,6 @@ multiplatform {
                 implementation(libs.android.compose.viewmodel)
                 implementation(libs.koin.android.compose)
 
-                implementation(projects.addEntry.nav)
                 implementation(projects.auth.dto)
                 implementation(projects.home.nav)
                 implementation(projects.network)

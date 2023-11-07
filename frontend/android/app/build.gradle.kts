@@ -38,6 +38,9 @@ dependencies {
     implementation(libs.koin)
     implementation(libs.koin.android)
 
+    implementation(projects.addEntry.dto)
+    implementation(projects.addEntry.nav)
+    implementation(projects.addEntry.ui)
     implementation(projects.auth.nav)
     implementation(projects.auth.ui)
     implementation(projects.home.nav)
