@@ -27,7 +27,7 @@ dependencies {
     implementation(libs.logback)
 
     implementation(projects.auth.dto)
-    implementation(projects.entries)
+    implementation(projects.dto)
 
     testImplementation(libs.ktor.client)
     testImplementation(libs.ktor.server.test)

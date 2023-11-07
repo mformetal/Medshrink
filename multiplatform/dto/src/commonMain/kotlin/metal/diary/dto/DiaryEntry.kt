@@ -1,10 +1,10 @@
-package metal.diary.entries
+package metal.diary.dto
 
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class DiaryEntry(
-    val id: String,
+    val id: Int,
     val title: String,
     val body: String
 )

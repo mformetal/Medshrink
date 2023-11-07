@@ -3,6 +3,8 @@ plugins {
 }
 
 multiplatform {
+    serialization()
+
     android {
         namespace("metal.diary.addentry.ui")
 
@@ -29,6 +31,8 @@ multiplatform {
                 implementation(libs.coroutines.core)
                 implementation(libs.koin)
                 implementation(libs.ktor.client)
+
+                implementation(projects.dto)
                 api(projects.viewmodel)
             }
         }

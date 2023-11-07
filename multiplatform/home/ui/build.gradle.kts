@@ -28,7 +28,7 @@ multiplatform {
             dependencies {
                 api(projects.viewmodel)
 
-                implementation(projects.entries)
+                implementation(projects.dto)
                 implementation(projects.network)
             }
         }

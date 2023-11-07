@@ -12,7 +12,7 @@ multiplatform {
     }
 
     android {
-        namespace("metal.diary.diary.entries")
+        namespace("metal.diary.dto")
 
         main {
 

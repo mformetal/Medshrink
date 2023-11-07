@@ -8,7 +8,7 @@ import io.ktor.http.contentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import metal.diary.entries.DiaryEntry
+import metal.diary.dto.DiaryEntry
 import metal.diary.multiplatform.viewmodel.ViewModel
 
 class HomeViewModel(private val httpClient: HttpClient) : ViewModel() {

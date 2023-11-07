@@ -15,7 +15,8 @@ import io.ktor.server.routing.routing
 import io.ktor.server.sessions.get
 import io.ktor.server.sessions.sessions
 import metal.diary.auth.dto.UserSession
-import metal.diary.entries.DiaryEntry
+import metal.diary.dto.CreateDiaryEntry
+import metal.diary.dto.DiaryEntry
 
 fun Application.entryRouting() {
     val sessionsData = mutableMapOf<UserSession, MutableList<DiaryEntry>>()
@@ -35,7 +36,7 @@ fun Application.entryRouting() {
 
 private fun Route.installDeleteDiaryEntry(sessionsData: MutableMap<UserSession, MutableList<DiaryEntry>>) {
     delete("{id?}") {
-        val id = call.parameters["id"] ?: return@delete call.respondText(
+        val id = call.parameters["id"]?.toInt() ?: return@delete call.respondText(
             "Missing id",
             status = HttpStatusCode.BadRequest
         )
@@ -57,8 +58,11 @@ private fun Route.installPostDiaryEntry(sessionsData: MutableMap<UserSession, Mu
         if (currentSession == null) {
             call.respondText("No session", status = HttpStatusCode.Unauthorized)
         } else {
-            val entry = call.receive<DiaryEntry>()
+            val createRequest = call.receive<CreateDiaryEntry>()
             val entries = sessionsData[currentSession]
+            val id = entries?.size?.inc() ?: 1
+            val entry = DiaryEntry(id = id, title = createRequest.title, body = createRequest.body)
+
             if (entries == null) {
                 sessionsData[currentSession] = mutableListOf(entry)
             } else {
@@ -66,13 +70,15 @@ private fun Route.installPostDiaryEntry(sessionsData: MutableMap<UserSession, Mu
 
                 sessionsData[currentSession] = entries
             }
+
+            call.respond(entry)
         }
     }
 }
 
 private fun Route.installGetDiaryEntry(sessionsData: MutableMap<UserSession, MutableList<DiaryEntry>>) {
     get("{id?}") {
-        val id = call.parameters["id"] ?: return@get call.respondText(
+        val id = call.parameters["id"]?.toInt() ?: return@get call.respondText(
             "Missing id",
             status = HttpStatusCode.BadRequest
         )
