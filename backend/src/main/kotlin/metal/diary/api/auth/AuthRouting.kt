@@ -16,13 +16,14 @@ fun Application.configureAuth() {
     routing {
         post("/login") {
             val request = call.receive<LoginRequest>()
-            val response = if (request.username.isNotBlank() && request.password.isNotBlank()) {
-                call.sessions.set(UserSession(id = request.username))
+            val response =
+                if (request.username.isNotBlank() && request.password.isNotBlank()) {
+                    call.sessions.set(UserSession(id = request.username))
 
-                LoginResponse(successful = true)
-            } else {
-                LoginResponse(successful = false)
-            }
+                    LoginResponse(successful = true)
+                } else {
+                    LoginResponse(successful = false)
+                }
             call.respond(response)
         }
     }

@@ -9,7 +9,6 @@ import metal.diary.api.configureRouting
 import org.junit.Test
 
 class ApplicationTest {
-
     @Test
     fun testRoot() = testApplication {
         application {

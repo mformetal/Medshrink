@@ -1,0 +1,7 @@
+comments:
+  UndocumentedPublicFunction:
+    active: false
+
+naming:
+  FunctionNaming:
+      ignoreAnnotated: ['Composable']

@@ -19,10 +19,13 @@ class LintPlugin : Plugin<Project> {
                 toolVersion = catalog().stringVersion("detekt")
 
                 allRules = true
+                buildUponDefaultConfig = true
                 autoCorrect = true
                 parallel = true
 
                 ignoredBuildTypes = listOf("release")
+
+                config.from("${target.rootProject.rootDir}/detekt.yml")
             }
 
             dependencies {

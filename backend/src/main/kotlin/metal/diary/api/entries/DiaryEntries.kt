@@ -2,6 +2,7 @@ package metal.diary.api.entries
 
 import io.ktor.http.HttpStatusCode
 import io.ktor.server.application.Application
+import io.ktor.server.application.ApplicationCall
 import io.ktor.server.application.call
 import io.ktor.server.request.receive
 import io.ktor.server.response.respond
@@ -14,6 +15,7 @@ import io.ktor.server.routing.route
 import io.ktor.server.routing.routing
 import io.ktor.server.sessions.get
 import io.ktor.server.sessions.sessions
+import io.ktor.util.pipeline.PipelineContext
 import metal.diary.auth.dto.UserSession
 import metal.diary.dto.CreateDiaryEntry
 import metal.diary.dto.DiaryEntry
@@ -36,14 +38,15 @@ fun Application.entryRouting() {
 
 private fun Route.installDeleteDiaryEntry(sessionsData: MutableMap<UserSession, MutableList<DiaryEntry>>) {
     delete("{id?}") {
-        val id = call.parameters["id"]?.toInt() ?: return@delete call.respondText(
-            "Missing id",
-            status = HttpStatusCode.BadRequest
-        )
+        val id =
+            call.parameters["id"]?.toInt() ?: return@delete call.respondText(
+                "Missing id",
+                status = HttpStatusCode.BadRequest,
+            )
 
         val currentSession = call.sessions.get<UserSession>()
         if (currentSession == null) {
-            call.respondText("No session", status = HttpStatusCode.Unauthorized)
+            respondWithUnauthedError()
         } else {
             sessionsData[currentSession]?.removeIf { existingEntry ->
                 existingEntry.id == id
@@ -56,7 +59,7 @@ private fun Route.installPostDiaryEntry(sessionsData: MutableMap<UserSession, Mu
     post {
         val currentSession = call.sessions.get<UserSession>()
         if (currentSession == null) {
-            call.respondText("No session", status = HttpStatusCode.Unauthorized)
+            respondWithUnauthedError()
         } else {
             val createRequest = call.receive<CreateDiaryEntry>()
             val entries = sessionsData[currentSession]
@@ -78,21 +81,23 @@ private fun Route.installPostDiaryEntry(sessionsData: MutableMap<UserSession, Mu
 
 private fun Route.installGetDiaryEntry(sessionsData: MutableMap<UserSession, MutableList<DiaryEntry>>) {
     get("{id?}") {
-        val id = call.parameters["id"]?.toInt() ?: return@get call.respondText(
-            "Missing id",
-            status = HttpStatusCode.BadRequest
-        )
+        val id =
+            call.parameters["id"]?.toInt() ?: return@get call.respondText(
+                "Missing id",
+                status = HttpStatusCode.BadRequest,
+            )
 
         val currentSession = call.sessions.get<UserSession>()
         if (currentSession == null) {
-            call.respondText("No session", status = HttpStatusCode.Unauthorized)
+            respondWithUnauthedError()
         } else {
-            val entry = sessionsData[currentSession]?.find { diaryEntry ->
-                diaryEntry.id == id
-            } ?: return@get call.respondText(
-                "No entry with id $id",
-                status = HttpStatusCode.NotFound
-            )
+            val entry =
+                sessionsData[currentSession]?.find { diaryEntry ->
+                    diaryEntry.id == id
+                } ?: return@get call.respondText(
+                    "No entry with id $id",
+                    status = HttpStatusCode.NotFound,
+                )
 
             call.respond(entry)
         }
@@ -103,10 +108,14 @@ private fun Route.installGetAllDiaryEntries(sessionsData: MutableMap<UserSession
     get {
         val currentSession = call.sessions.get<UserSession>()
         if (currentSession == null) {
-            call.respondText("No session", status = HttpStatusCode.Unauthorized)
+            respondWithUnauthedError()
         } else {
             val entries = sessionsData[currentSession]
             call.respond(entries ?: emptyList())
         }
     }
+}
+
+private suspend fun PipelineContext<Unit, ApplicationCall>.respondWithUnauthedError() {
+    call.respondText("No session", status = HttpStatusCode.Unauthorized)
 }

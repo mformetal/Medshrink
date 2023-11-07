@@ -1,4 +1,4 @@
-package metal.diary.home.ui
+package metal.diary.listentries.ui
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import metal.diary.dto.DiaryEntry
 import metal.diary.viewmodel.ViewModel
 
-class HomeViewModel(private val httpClient: HttpClient) : ViewModel() {
+class ListEntriesViewModel(private val httpClient: HttpClient) : ViewModel() {
 
     private val _uiState = MutableStateFlow(HomeState())
     val uiState: StateFlow<HomeState> = _uiState.asStateFlow()

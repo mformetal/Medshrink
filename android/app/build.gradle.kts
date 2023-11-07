@@ -33,6 +33,7 @@ dependencies {
     implementation(libs.android.appcompat)
     implementation(libs.android.compose.activity)
     implementation(libs.android.compose.material)
+    implementation(libs.android.compose.material3)
     implementation(libs.android.compose.navigation)
     implementation(libs.android.compose.runtime)
     implementation(libs.koin)
@@ -44,11 +45,10 @@ dependencies {
     implementation(projects.auth.nav)
     implementation(projects.auth.ui)
     implementation(projects.home.nav)
-    implementation(projects.home.ui)
+    implementation(projects.listEntries.nav)
+    implementation(projects.listEntries.ui)
     implementation(projects.network)
     implementation(projects.viewmodel)
-
-    detektPlugins("com.twitter.compose.rules:detekt:${catalog().stringVersion("twitterDetektRules")}")
 }
 
 tasks.register<Exec>("runDebug") {

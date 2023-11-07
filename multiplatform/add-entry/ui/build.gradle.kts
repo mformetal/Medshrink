@@ -12,7 +12,7 @@ multiplatform {
             dependencies {
                 implementation(libs.android.compose.runtime)
                 implementation(libs.koin.android)
-                implementation(libs.android.compose.material)
+                implementation(libs.android.compose.material3)
                 implementation(libs.android.compose.navigation)
                 implementation(libs.android.compose.runtime)
                 implementation(libs.android.compose.viewmodel)

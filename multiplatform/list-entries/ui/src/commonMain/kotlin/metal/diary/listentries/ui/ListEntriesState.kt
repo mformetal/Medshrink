@@ -1,4 +1,4 @@
-package metal.diary.home.ui
+package metal.diary.listentries.ui
 
 import metal.diary.dto.DiaryEntry
 
