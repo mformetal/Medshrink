@@ -33,7 +33,7 @@ plugins {
 
 rootProject.name = "Diary"
 
-includeLibraryAs(":android:app", "frontend/android/app")
+includeLibraryAs(":android:app", "android/app")
 
 includeLibraryAs(":add-entry:dto", "multiplatform/add-entry/dto")
 includeLibraryAs(":add-entry:nav", "multiplatform/add-entry/nav")
