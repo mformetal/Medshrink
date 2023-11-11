@@ -8,8 +8,7 @@ internal class Database(databaseDriverFactory: DatabaseDriverFactory) {
 
     private val queries = cache.appDatabaseQueries
 
-    internal fun clearDatabase() {
-        queries.transaction {
-        }
+    internal fun getAllNotes(): List<Note> {
+        return queries.getAllNotes().executeAsList()
     }
 }
