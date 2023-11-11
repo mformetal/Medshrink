@@ -21,7 +21,6 @@ dependencies {
     implementation("org.jetbrains.kotlin.plugin.serialization:org.jetbrains.kotlin.plugin.serialization.gradle.plugin:${libs.versions.kotlin.get()}")
     implementation("io.kotest.multiplatform:io.kotest.multiplatform.gradle.plugin:${libs.versions.kotest.get()}")
     implementation("io.ktor.plugin:io.ktor.plugin.gradle.plugin:${libs.versions.ktor.get()}")
-    implementation("com.squareup.sqldelight:gradle-plugin:${libs.versions.sql.get()}")
     implementation("org.gradle.toolchains.foojay-resolver-convention:org.gradle.toolchains.foojay-resolver-convention.gradle.plugin:0.7.0")
 
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${libs.versions.detekt.get()}")

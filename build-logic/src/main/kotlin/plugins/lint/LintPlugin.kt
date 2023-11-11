@@ -7,6 +7,7 @@ import io.gitlab.arturbosch.detekt.DetektPlugin
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.file.FileTreeElement
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
@@ -32,6 +33,12 @@ class LintPlugin : Plugin<Project> {
 
             dependencies {
                 "detektPlugins"("io.gitlab.arturbosch.detekt:detekt-formatting:${catalog().stringVersion("detekt")}")
+            }
+
+            tasks.withType<Detekt>().configureEach {
+                exclude { fileTreeElement: FileTreeElement ->
+                    fileTreeElement.file.absolutePath.contains("build/")
+                }
             }
 
             tasks.named(DetektPlugin.DETEKT_TASK_NAME) {

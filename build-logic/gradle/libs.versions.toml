@@ -75,6 +75,7 @@ ktor-server-test = { module = "io.ktor:ktor-server-test-host", version.ref = "kt
 androidGradlePlugin = { id = "com.android.tools.build:gradle", version.ref = "androidGradlePlugin" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+sql = { id = "com.squareup.sqldelight" , version.ref = "sql" }
 
 # SERVER
 ktor = { id = "io.ktor.plugin", version.ref = "ktor" }

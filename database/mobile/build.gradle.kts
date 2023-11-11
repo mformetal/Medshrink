@@ -1,10 +1,10 @@
 plugins {
     id("multiplatform")
+    alias(libs.plugins.sql)
 }
 
 multiplatform {
     serialization()
-    sql()
 
     android {
         namespace("metal.diary.databsase")
@@ -22,5 +22,11 @@ multiplatform {
                 implementation(libs.sql.common)
             }
         }
+    }
+}
+
+sqldelight {
+    database("AppDatabase") {
+        packageName = "metal.diary.databsase"
     }
 }
