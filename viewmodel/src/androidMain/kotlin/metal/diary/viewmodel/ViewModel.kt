@@ -1,14 +1,14 @@
 package metal.diary.viewmodel
 
 import androidx.lifecycle.ViewModel
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 
 @Suppress("EmptyDefaultConstructor")
-actual open class ViewModel actual constructor() : ViewModel() {
+actual open class ViewModel actual constructor(actual val dispatcher: CoroutineDispatcher) : ViewModel() {
 
-    actual val viewModelScope: CoroutineScope = CoroutineScope(Dispatchers.Default)
+    actual val viewModelScope: CoroutineScope = CoroutineScope(dispatcher)
 
     public actual override fun onCleared() {
         super.onCleared()

@@ -110,8 +110,8 @@ private fun Route.installGetAllDiaryEntries(sessionsData: MutableMap<UserSession
         if (currentSession == null) {
             respondWithUnauthedError()
         } else {
-            val entries = sessionsData[currentSession]
-            call.respond(entries ?: emptyList())
+            val entries = sessionsData[currentSession].orEmpty()
+            call.respond(entries)
         }
     }
 }

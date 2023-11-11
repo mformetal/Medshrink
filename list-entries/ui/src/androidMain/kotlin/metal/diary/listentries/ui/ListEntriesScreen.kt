@@ -5,8 +5,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,8 +25,10 @@ fun ListEntriesScreen(viewModel: ListEntriesViewModel = koinViewModel()) {
         viewModel.getEntries()
     }
 
-    LazyColumn(contentPadding = PaddingValues(horizontal = 4.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp)) {
+    LazyColumn(
+        contentPadding = PaddingValues(horizontal = 4.dp),
+        verticalArrangement = Arrangement.spacedBy(8.dp)
+    ) {
         items(uiState.value.entries) { item: DiaryEntry ->
             Column {
                 Card(modifier = Modifier.fillMaxWidth().padding(16.dp)) {

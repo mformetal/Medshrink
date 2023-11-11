@@ -26,12 +26,16 @@ class AddEntryViewModel(private val httpClient: HttpClient) : ViewModel() {
         }.body<DiaryEntry>()
 
     fun onTitleInput(input: String) {
-        _uiState.value = _uiState.value.copy(title = input,
-            isCompleteButtonEnabled = input.isNotBlank() && _uiState.value.body.isNotBlank())
+        _uiState.value = _uiState.value.copy(
+            title = input,
+            isCompleteButtonEnabled = input.isNotBlank() && _uiState.value.body.isNotBlank()
+        )
     }
 
     fun onBodyInput(input: String) {
-        _uiState.value = _uiState.value.copy(body = input,
-            isCompleteButtonEnabled = _uiState.value.title.isNotBlank() && input.isNotBlank())
+        _uiState.value = _uiState.value.copy(
+            body = input,
+            isCompleteButtonEnabled = _uiState.value.title.isNotBlank() && input.isNotBlank()
+        )
     }
 }

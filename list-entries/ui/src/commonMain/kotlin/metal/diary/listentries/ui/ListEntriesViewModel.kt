@@ -13,8 +13,8 @@ import metal.diary.viewmodel.ViewModel
 
 class ListEntriesViewModel(private val httpClient: HttpClient) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(HomeState())
-    val uiState: StateFlow<HomeState> = _uiState.asStateFlow()
+    private val _uiState = MutableStateFlow(ListEntriesState())
+    val uiState: StateFlow<ListEntriesState> = _uiState.asStateFlow()
 
     suspend fun getEntries() {
         val entries = httpClient.get("/entries") {
