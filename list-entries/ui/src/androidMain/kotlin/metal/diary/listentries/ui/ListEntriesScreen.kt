@@ -14,7 +14,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import metal.diary.dto.DiaryEntry
+import metal.diary.dto.Note
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
@@ -29,7 +29,7 @@ fun ListEntriesScreen(viewModel: ListEntriesViewModel = koinViewModel()) {
         contentPadding = PaddingValues(horizontal = 4.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        items(uiState.value.entries) { item: DiaryEntry ->
+        items(uiState.value.entries) { item: Note ->
             Column {
                 Card(modifier = Modifier.fillMaxWidth().padding(16.dp)) {
                     Text(text = item.title, modifier = Modifier.padding(4.dp))

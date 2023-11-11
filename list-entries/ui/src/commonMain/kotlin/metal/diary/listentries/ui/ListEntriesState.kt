@@ -1,5 +1,5 @@
 package metal.diary.listentries.ui
 
-import metal.diary.dto.DiaryEntry
+import metal.diary.dto.Note
 
-data class ListEntriesState(val entries: List<DiaryEntry> = emptyList())
+data class ListEntriesState(val entries: List<Note> = emptyList())

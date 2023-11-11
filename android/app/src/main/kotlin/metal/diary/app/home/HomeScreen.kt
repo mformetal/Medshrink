@@ -15,8 +15,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import metal.diary.addentry.nav.ADD_ENTRY_SCREEN_ROUTE
-import metal.diary.addentry.ui.AddEntryScreen
+import metal.diary.addnote.nav.ADD_NOTE_SCREEN_ROUTE
+import metal.diary.addnote.ui.AddEntryScreen
 import metal.diary.listentries.nav.LIST_ENTRIES_SCREEN_ROUTE
 import metal.diary.listentries.ui.ListEntriesScreen
 
@@ -29,7 +29,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             Box(modifier = modifier.padding(padding)) {
                 NavHost(navController, startDestination = LIST_ENTRIES_SCREEN_ROUTE) {
                     composable(LIST_ENTRIES_SCREEN_ROUTE) { ListEntriesScreen() }
-                    composable(ADD_ENTRY_SCREEN_ROUTE) { AddEntryScreen(navController) }
+                    composable(ADD_NOTE_SCREEN_ROUTE) { AddEntryScreen(navController) }
                 }
             }
         },

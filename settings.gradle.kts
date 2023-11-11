@@ -33,9 +33,9 @@ rootProject.name = "Diary"
 
 include(":android:app")
 
-include(":add-entry:dto")
-include(":add-entry:nav")
-include(":add-entry:ui")
+include(":add-note:dto")
+include(":add-note:nav")
+include(":add-note:ui")
 include(":auth:dto")
 include(":auth:nav")
 include(":auth:ui")

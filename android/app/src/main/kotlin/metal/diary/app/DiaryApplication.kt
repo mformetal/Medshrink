@@ -1,7 +1,7 @@
 package metal.diary.app
 
 import android.app.Application
-import metal.diary.addentry.ui.addEntryModule
+import metal.diary.addnote.ui.addNoteModule
 import metal.diary.auth.ui.authModule
 import metal.diary.listentries.ui.listEntriesModule
 import metal.diary.network.networkModule
@@ -25,7 +25,7 @@ class DiaryApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@DiaryApplication)
-            modules(appModule, addEntryModule(), authModule(), listEntriesModule(), networkModule())
+            modules(appModule, addNoteModule(), authModule(), listEntriesModule(), networkModule())
         }
     }
 }

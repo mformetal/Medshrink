@@ -8,7 +8,7 @@ import io.ktor.http.contentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import metal.diary.dto.DiaryEntry
+import metal.diary.dto.Note
 import metal.diary.viewmodel.ViewModel
 
 class ListEntriesViewModel(private val httpClient: HttpClient) : ViewModel() {
@@ -19,7 +19,7 @@ class ListEntriesViewModel(private val httpClient: HttpClient) : ViewModel() {
     suspend fun getEntries() {
         val entries = httpClient.get("/entries") {
             contentType(ContentType.Application.Json)
-        }.body<List<DiaryEntry>>()
+        }.body<List<Note>>()
 
         _uiState.value = _uiState.value.copy(entries = entries)
     }
