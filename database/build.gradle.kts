@@ -3,6 +3,9 @@ plugins {
 }
 
 multiplatform {
+    serialization()
+    sql()
+
     android {
         namespace("metal.diary.databsase")
 

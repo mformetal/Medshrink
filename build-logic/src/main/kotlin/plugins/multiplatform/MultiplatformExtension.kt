@@ -1,5 +1,6 @@
 package plugins.multiplatform
 
+import com.squareup.sqldelight.gradle.SqlDelightPlugin
 import emptyAction
 import io.ktor.plugin.KtorGradlePlugin
 import org.gradle.api.Action
@@ -67,5 +68,9 @@ open class MultiplatformExtension @Inject constructor(
 
     fun serialization() {
         project.apply<SerializationGradleSubplugin>()
+    }
+
+    fun sql() {
+        project.apply<SqlDelightPlugin>()
     }
 }
