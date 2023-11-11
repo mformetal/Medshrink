@@ -6,6 +6,7 @@ koin = "3.5.0"
 kotlin = "1.9.10"
 kotest = "5.7.2"
 ktor = "2.3.5"
+sql = "1.5.5"
 
 # ANDROID
 androidCompileSdk = "34"
@@ -55,6 +56,10 @@ koin-android-compose = { module = "io.insert-koin:koin-androidx-compose", versio
 ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
 ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
 ktor-server-auth = { module = "io.ktor:ktor-server-auth", version.ref = "ktor" }
+
+# SQL
+sql-android = { module = "com.squareup.sqldelight:android-driver", version.ref = "sql" }
+sql-common = { module = "com.squareup.sqldelight:runtime", version.ref = "sql" }
 
 logback = { module = "ch.qos.logback:logback-classic", version = "1.2.3" }
 
