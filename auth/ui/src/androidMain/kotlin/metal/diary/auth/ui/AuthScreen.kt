@@ -57,8 +57,9 @@ fun AuthScreen(navController: NavController, viewModel: AuthViewModel = koinView
             enabled = authState.value.isLoginButtonEnabled,
             onClick = {
                 composableScope.launch {
-                    val response = viewModel.loginClicked()
-                    if (response.successful) {
+                    val successful = viewModel.loginClicked()
+
+                    if (successful) {
                         navController.navigate(HOME_SCREEN_ROUTE)
                     } else {
                         Toast.makeText(context, "Invalid auth", Toast.LENGTH_SHORT).show()

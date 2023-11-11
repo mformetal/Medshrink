@@ -1,21 +1,18 @@
 package metal.diary.auth.ui
 
 import io.ktor.client.HttpClient
-import io.ktor.client.call.body
-import io.ktor.client.request.post
 import io.ktor.client.request.setBody
 import io.ktor.http.ContentType
 import io.ktor.http.contentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
-import metal.diary.auth.dto.LoginResponse
 import metal.diary.auth.dto.LoginRequest
 import metal.diary.auth.dto.UserSession
 import metal.diary.viewmodel.ViewModel
 import metal.diary.network.SessionsHeaderStorage
+import metal.diary.network.fold
+import metal.diary.network.postCatching
 
 class AuthViewModel(private val httpClient: HttpClient,
     private val sessionsHeaderStorage: SessionsHeaderStorage) : ViewModel() {
@@ -23,15 +20,17 @@ class AuthViewModel(private val httpClient: HttpClient,
     private val _uiState = MutableStateFlow(AuthState())
     val uiState: StateFlow<AuthState> = _uiState.asStateFlow()
 
-    suspend fun loginClicked() : LoginResponse {
-        val httpResponse = httpClient.post("/login") {
+    suspend fun loginClicked() : Boolean {
+        return httpClient.postCatching("/login") {
             contentType(ContentType.Application.Json)
             setBody(LoginRequest(_uiState.value.username, _uiState.value.password))
-        }
+        }.fold(onSuccess = {
+            sessionsHeaderStorage.set(headers[UserSession.HEADER_NAME])
 
-        sessionsHeaderStorage.set(httpResponse.headers[UserSession.HEADER_NAME])
-
-        return httpResponse.body<LoginResponse>()
+            true
+        }, onError = {
+            false
+        })
     }
 
     fun onUsernameInput(input: String) {

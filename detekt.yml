@@ -5,3 +5,7 @@ comments:
 naming:
   FunctionNaming:
       ignoreAnnotated: ['Composable']
+
+style:
+  MagicNumber:
+    ignoreLocalVariableDeclaration: false
