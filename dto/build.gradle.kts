@@ -12,7 +12,7 @@ multiplatform {
     }
 
     android {
-        namespace("metal.diary.dto")
+        namespace("metal.medshrink.dto")
 
         main {
 

@@ -29,21 +29,12 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.7.0"
 }
 
-rootProject.name = "Diary"
+rootProject.name = "Medshrink"
 
 include(":android:app")
 
-include(":add-note:dto")
-include(":add-note:nav")
-include(":add-note:ui")
-include(":auth:dto")
-include(":auth:nav")
-include(":auth:ui")
 include(":database:mobile")
 include(":dto")
-include(":home:nav")
-include(":list-entries:nav")
-include(":list-entries:ui")
 include(":network")
 include(":viewmodel")
 

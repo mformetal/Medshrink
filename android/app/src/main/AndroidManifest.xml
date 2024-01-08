@@ -4,11 +4,11 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:name=".DiaryApplication"
-        android:label="Diary" >
+        android:name=".MedshrinkApplication"
+        android:label="Medshrink" >
 
         <activity
-            android:name=".DiaryActivity"
+            android:name=".MedshrinkActivity"
             android:exported="true"
             android:icon="@mipmap/ic_launcher" >
 

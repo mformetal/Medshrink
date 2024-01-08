@@ -4,11 +4,11 @@ plugins {
     id("backend-app")
 }
 
-group = "metal.diary"
+group = "metal.medshrink"
 version = "0.0.1"
 
 application {
-    mainClass.set("metal.diary.api.ApplicationKt")
+    mainClass.set("metal.medshrink.api.ApplicationKt")
 }
 
 kotlin {
@@ -26,7 +26,6 @@ dependencies {
     implementation(libs.ktor.server.sessions)
     implementation(libs.logback)
 
-    implementation(projects.auth.dto)
     implementation(projects.dto)
 
     testImplementation(libs.ktor.client)

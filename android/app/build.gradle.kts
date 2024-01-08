@@ -7,10 +7,10 @@ plugins {
 }
 
 android {
-    namespace = "metal.diary.app"
+    namespace = "metal.medshrink.app"
 
     defaultConfig {
-        applicationId = "metal.diary.app"
+        applicationId = "metal.medshrink.app"
 
         versionCode = 1
         versionName = "1.0"
@@ -39,14 +39,6 @@ dependencies {
     implementation(libs.koin)
     implementation(libs.koin.android)
 
-    implementation(projects.addNote.dto)
-    implementation(projects.addNote.nav)
-    implementation(projects.addNote.ui)
-    implementation(projects.auth.nav)
-    implementation(projects.auth.ui)
-    implementation(projects.home.nav)
-    implementation(projects.listEntries.nav)
-    implementation(projects.listEntries.ui)
     implementation(projects.network)
     implementation(projects.viewmodel)
 }
@@ -54,5 +46,5 @@ dependencies {
 tasks.register<Exec>("runDebug") {
     dependsOn("installDebug")
 
-    commandLine("adb", "shell", "am", "start", "-n", "metal.diary.app/.DiaryActivity")
+    commandLine("adb", "shell", "am", "start", "-n", "metal.medshrink.app/.MedshrinkActivity")
 }

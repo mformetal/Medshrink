@@ -4,7 +4,7 @@ plugins {
 
 multiplatform {
     android {
-        namespace("metal.diary.network")
+        namespace("metal.medshrink.network")
 
         main { }
     }

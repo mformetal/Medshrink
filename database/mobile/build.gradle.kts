@@ -7,7 +7,7 @@ multiplatform {
     serialization()
 
     android {
-        namespace("metal.diary.databsase")
+        namespace("metal.medshrink.databsase")
 
         main {
             dependencies {
@@ -27,6 +27,6 @@ multiplatform {
 
 sqldelight {
     database("AppDatabase") {
-        packageName = "metal.diary.databsase"
+        packageName = "metal.medshrink.databsase"
     }
 }

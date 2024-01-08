@@ -4,7 +4,7 @@ plugins {
 
 multiplatform {
     android {
-        namespace("metal.diary.viewmodel")
+        namespace("metal.medshrink.viewmodel")
 
         main {
             dependencies {
