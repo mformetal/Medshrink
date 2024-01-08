@@ -30,6 +30,7 @@ android-compose-material3 = { module = "androidx.compose.material3:material3", v
 android-compose-navigation = { module = "androidx.navigation:navigation-compose", version = "2.7.6" }
 android-compose-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-compose", version = "2.6.2" }
 android-appcompat = { module = "androidx.appcompat:appcompat", version = "1.6.1" }
+android-splashScreen = { module = "androidx.core:core-splashscreen", version = "1.1.0-alpha02" }
 android-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidLifecycle" }
 
 # COROUTINES
