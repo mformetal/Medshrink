@@ -5,13 +5,9 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import metal.medshrink.auth.AuthViewModel
-import metal.medshrink.auth.CurrentUser
 import org.koin.androidx.compose.koinViewModel
 
 const val TITLE_SCREEN = "title"
@@ -25,7 +21,7 @@ fun TitleScreen(navController: NavController, authViewModel: AuthViewModel = koi
         if (currentUser == null) {
             navController.navigate(Screens.Auth.route)
         } else {
-            navController.navigate(Screens.Frontpage.route)
+            navController.navigate(Screens.Title.route)
         }
     }
 }

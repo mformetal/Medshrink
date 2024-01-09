@@ -7,7 +7,9 @@ import metal.medshrink.frontpage.FRONTPAGE_SCREEN_ROUTE
 
 sealed class Screens(val route: String) {
 
-    object Frontpage : Screens(FRONTPAGE_SCREEN_ROUTE)
+    object Title : Screens(TITLE_SCREEN)
+
+    object Frontpage: Screens(FRONTPAGE_SCREEN_ROUTE)
 
     object Auth: Screens("auth") {
 

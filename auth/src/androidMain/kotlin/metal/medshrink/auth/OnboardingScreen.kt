@@ -34,7 +34,7 @@ fun OnboardingScreen(navController: NavController) {
                 Text(text = stringResource(R.string.login_button_text))
             }
 
-            Divider(modifier = Modifier.fillMaxHeight().width(1.dp))
+            Divider(modifier = Modifier.fillMaxHeight(fraction = .8f).width(1.dp).align(Alignment.CenterVertically))
 
             Button(
                 modifier = Modifier.weight(1f).padding(horizontal = medium_padding),
