@@ -1,6 +1,6 @@
 package metal.medshrink.auth
 
-data class AuthState(
+data class LoginState(
     val username: String = "",
     val password: String = "",
     val isPasswordVisible: Boolean = password.isNotBlank(),

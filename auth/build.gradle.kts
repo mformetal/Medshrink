@@ -15,8 +15,8 @@ multiplatform {
                 implementation(libs.android.compose.runtime)
                 implementation(libs.android.compose.viewmodel)
                 implementation(libs.koin.android.compose)
-                implementation(projects.android.composeResources)
-                implementation(projects.android.xmlResources)
+                implementation(projects.composeResources)
+                implementation(projects.xmlResources)
                 api(libs.android.viewmodel)
             }
         }

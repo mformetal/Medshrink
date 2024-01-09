@@ -7,8 +7,5 @@ import metal.medshrink.viewmodel.ViewModel
 
 class AuthViewModel : ViewModel() {
 
-    private val _uiState = MutableStateFlow(AuthState())
-    val uiState: StateFlow<AuthState> = _uiState.asStateFlow()
-
     suspend fun currentUser(): User? = null
 }

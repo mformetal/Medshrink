@@ -31,9 +31,9 @@ plugins {
 
 rootProject.name = "Medshrink"
 
-include(":android:app")
-include(":android:compose-resources")
-include(":android:xml-resources")
+include(":androidApp")
+include(":compose-resources")
+include(":xml-resources")
 
 include(":auth")
 include(":dto")

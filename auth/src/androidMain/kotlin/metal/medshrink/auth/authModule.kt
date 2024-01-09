@@ -6,4 +6,6 @@ import org.koin.dsl.module
 
 actual fun authModule(): Module = module {
     viewModel { AuthViewModel() }
+
+    viewModel { LoginViewModel() }
 }

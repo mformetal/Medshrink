@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace = "metal.medshrink.composeresources"
+    namespace = "metal.medshrink.compose.resources"
 }
 
 dependencies {

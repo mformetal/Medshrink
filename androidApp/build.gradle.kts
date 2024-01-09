@@ -41,7 +41,7 @@ dependencies {
     implementation(libs.koin.android)
     implementation(libs.koin.android.compose)
 
-    implementation(projects.android.composeResources)
+    implementation(projects.composeResources)
     implementation(projects.auth)
     implementation(projects.frontpage)
     implementation(projects.network)
