@@ -9,7 +9,7 @@
         android:theme="@style/Theme.Medshrink.Splash" >
 
         <activity
-            android:name=".MedshrinkActivity"
+            android:name="metal.medshrink.android.MedshrinkActivity"
             android:exported="true"
             android:icon="@mipmap/ic_launcher" >
 

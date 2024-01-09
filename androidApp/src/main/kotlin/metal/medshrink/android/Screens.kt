@@ -1,4 +1,4 @@
-package metal.medshrink.app
+package metal.medshrink.android
 
 import metal.medshrink.auth.LOGIN_SCREEN_ROUTE
 import metal.medshrink.auth.ONBOARDING_ROUTE

@@ -4,7 +4,7 @@ plugins {
 
 multiplatform {
     android {
-        namespace("metal.medshrink.auth")
+        namespace("metal.medshrink.frontpage")
 
         main {
             dependencies {

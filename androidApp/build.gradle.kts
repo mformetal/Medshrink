@@ -7,10 +7,10 @@ plugins {
 }
 
 android {
-    namespace = "metal.medshrink.app"
+    namespace = "metal.medshrink.android"
 
     defaultConfig {
-        applicationId = "metal.medshrink.app"
+        applicationId = "metal.medshrink.android"
 
         versionCode = 1
         versionName = "1.0"

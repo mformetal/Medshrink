@@ -1,4 +1,4 @@
-package metal.medshrink.app
+package metal.medshrink.android
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,6 +9,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
 import metal.medshrink.AppTheme
+import metal.medshrink.android.Screens
+import metal.medshrink.android.TitleScreen
 import metal.medshrink.auth.OnboardingScreen
 import metal.medshrink.auth.LoginScreen
 import metal.medshrink.auth.RegisterScreen

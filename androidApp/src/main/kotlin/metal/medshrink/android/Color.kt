@@ -1,4 +1,4 @@
-package metal.medshrink.app
+package metal.medshrink.android
 
 import androidx.compose.ui.graphics.Color
 

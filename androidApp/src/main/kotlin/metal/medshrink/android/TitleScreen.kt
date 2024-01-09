@@ -1,4 +1,4 @@
-package metal.medshrink.app
+package metal.medshrink.android
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -7,6 +7,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import metal.medshrink.android.md_theme_light_primary
 import metal.medshrink.auth.AuthViewModel
 import org.koin.androidx.compose.koinViewModel
 

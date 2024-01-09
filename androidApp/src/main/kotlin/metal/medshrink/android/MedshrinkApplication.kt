@@ -1,4 +1,4 @@
-package metal.medshrink.app
+package metal.medshrink.android
 
 import android.app.Application
 import metal.medshrink.auth.authModule
