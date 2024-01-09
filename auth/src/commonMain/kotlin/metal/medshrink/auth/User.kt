@@ -1,3 +1,3 @@
 package metal.medshrink.auth
 
-data class User(val username: String)
+data class User(val email: String)

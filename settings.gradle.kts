@@ -34,13 +34,11 @@ rootProject.name = "Medshrink"
 include(":androidApp")
 include(":compose-resources")
 include(":xml-resources")
-
 include(":auth")
 include(":dto")
 include(":frontpage")
+include(":logging")
 include(":network")
 include(":viewmodel")
-
-include(":backend")
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")

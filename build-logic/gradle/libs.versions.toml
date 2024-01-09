@@ -41,6 +41,7 @@ coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", ve
 # FIREBASE
 firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.7.0" }
 firebase-android-auth = { module = "com.google.firebase:firebase-auth" }
+firebase-common = { group = "com.google.firebase", name = "firebase-common-ktx", version = "20.4.2" }
 
 # NETWORKING
 json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.6.0" }
@@ -69,6 +70,8 @@ sql-android = { module = "com.squareup.sqldelight:android-driver", version.ref =
 sql-common = { module = "com.squareup.sqldelight:runtime", version.ref = "sql" }
 
 logback = { module = "ch.qos.logback:logback-classic", version = "1.2.3" }
+
+napierLogging = { module = "io.github.aakira:napier", version = "1.4.1" }
 
 # TESTING
 kotest-assertions-core = { module = "io.kotest:kotest-assertions-core", version.ref = "kotest" }

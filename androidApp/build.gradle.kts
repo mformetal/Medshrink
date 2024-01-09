@@ -4,6 +4,7 @@ import extensions.stringVersion
 
 plugins {
     id("androidApp")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -22,6 +23,17 @@ android {
 
     buildFeatures {
         compose = true
+    }
+
+    buildTypes {
+        getByName("debug") {
+            isMinifyEnabled = false
+        }
+
+        getByName("release") {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
+        }
     }
 }
 
@@ -46,6 +58,9 @@ dependencies {
     implementation(projects.frontpage)
     implementation(projects.network)
     implementation(projects.viewmodel)
+    implementation(libs.firebase.android.auth)
+    implementation(libs.firebase.common)
+    implementation(libs.napierLogging)
 }
 
 tasks.register<Exec>("runDebug") {

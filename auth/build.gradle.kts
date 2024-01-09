@@ -34,6 +34,10 @@ multiplatform {
             dependencies {
                 implementation(libs.coroutines.core)
                 implementation(libs.koin)
+
+                implementation(libs.firebase.android.auth)
+
+                implementation(projects.logging)
                 implementation(projects.viewmodel)
             }
         }

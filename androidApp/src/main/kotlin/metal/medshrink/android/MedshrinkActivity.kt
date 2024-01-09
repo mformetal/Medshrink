@@ -9,11 +9,9 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
 import metal.medshrink.AppTheme
-import metal.medshrink.android.Screens
-import metal.medshrink.android.TitleScreen
 import metal.medshrink.auth.OnboardingScreen
-import metal.medshrink.auth.LoginScreen
-import metal.medshrink.auth.RegisterScreen
+import metal.medshrink.auth.signin.SignInScreen
+import metal.medshrink.auth.signup.SignUpScreen
 import metal.medshrink.frontpage.FrontpageScreen
 
 class MedshrinkActivity : ComponentActivity() {
@@ -41,11 +39,15 @@ class MedshrinkActivity : ComponentActivity() {
                         composable(route = Screens.Auth.Onboarding.route) {
                             OnboardingScreen(navController)
                         }
-                        composable(route = Screens.Auth.Register.route) {
-                            RegisterScreen()
+                        composable(route = Screens.Auth.SignUp.route) {
+                            SignUpScreen {
+                                navController.navigate(Screens.Frontpage.route)
+                            }
                         }
-                        composable(route = Screens.Auth.Login.route) {
-                            LoginScreen()
+                        composable(route = Screens.Auth.SignIn.route) {
+                            SignInScreen(navController) {
+                                navController.navigate(Screens.Frontpage.route)
+                            }
                         }
                     }
 
