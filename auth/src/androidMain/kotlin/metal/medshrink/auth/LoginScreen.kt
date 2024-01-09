@@ -60,5 +60,13 @@ fun LoginScreen(viewModel: LoginViewModel = koinViewModel()) {
             }) {
             Text(text = stringResource(R.string.login_button_text))
         }
+
+        Button(
+            modifier = centerHorizontalAlignment,
+            onClick = {
+
+            }) {
+            Text(text = stringResource(R.string.login_with_google_button_text))
+        }
     }
 }

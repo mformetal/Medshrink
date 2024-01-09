@@ -1,5 +1,6 @@
 plugins {
     id("multiplatform")
+    id("firebase")
 }
 
 multiplatform {
@@ -17,6 +18,8 @@ multiplatform {
                 implementation(libs.koin.android.compose)
                 implementation(libs.android.credentials)
                 implementation(libs.android.credentials.playServices)
+
+                implementation(libs.firebase.android.auth)
 
                 implementation(projects.composeResources)
                 implementation(projects.xmlResources)

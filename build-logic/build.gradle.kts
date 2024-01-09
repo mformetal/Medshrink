@@ -22,6 +22,7 @@ dependencies {
     implementation("io.kotest.multiplatform:io.kotest.multiplatform.gradle.plugin:${libs.versions.kotest.get()}")
     implementation("io.ktor.plugin:io.ktor.plugin.gradle.plugin:${libs.versions.ktor.get()}")
     implementation("org.gradle.toolchains.foojay-resolver-convention:org.gradle.toolchains.foojay-resolver-convention.gradle.plugin:0.7.0")
+    implementation("com.google.gms.google-services:com.google.gms.google-services.gradle.plugin:4.4.0")
 
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:${libs.versions.detekt.get()}")
 }
@@ -46,6 +47,11 @@ gradlePlugin {
         register("BackendAppPlugin") {
             id = "backend-app"
             implementationClass = "plugins.backend.BackendApplicationPlugin"
+        }
+
+        register("FirebasePlugin") {
+            id = "firebase"
+            implementationClass = "plugins.FirebasePluginWrapper"
         }
 
         register("SettingsPlugin") {

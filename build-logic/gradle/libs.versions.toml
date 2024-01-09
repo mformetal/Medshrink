@@ -38,6 +38,10 @@ android-credentials-playServices = { module = "androidx.credentials:credentials-
 # COROUTINES
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.7.3" }
 
+# FIREBASE
+firebase-bom = { module = "com.google.firebase:firebase-bom", version = "32.7.0" }
+firebase-android-auth = { module = "com.google.firebase:firebase-auth" }
+
 # NETWORKING
 json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version = "1.6.0" }
 ktor-engine = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }

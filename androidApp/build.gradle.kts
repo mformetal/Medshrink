@@ -51,5 +51,5 @@ dependencies {
 tasks.register<Exec>("runDebug") {
     dependsOn("installDebug")
 
-    commandLine("adb", "shell", "am", "start", "-n", "metal.medshrink.app/.MedshrinkActivity")
+    commandLine("adb", "shell", "am", "start", "-n", "metal.medshrink.android/.MedshrinkActivity")
 }
