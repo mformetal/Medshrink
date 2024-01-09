@@ -32,6 +32,8 @@ android-compose-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-c
 android-appcompat = { module = "androidx.appcompat:appcompat", version = "1.6.1" }
 android-splashScreen = { module = "androidx.core:core-splashscreen", version = "1.1.0-alpha02" }
 android-viewmodel = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "androidLifecycle" }
+android-credentials = { module = "androidx.credentials:credentials", version = "1.3.0-alpha01" }
+android-credentials-playServices = { module = "androidx.credentials:credentials-play-services-auth", version = "1.3.0-alpha01" }
 
 # COROUTINES
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version = "1.7.3" }
