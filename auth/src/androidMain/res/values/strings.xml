@@ -13,5 +13,6 @@
 
     <string name="signup_now_text">New to Medshrink? Sign up now.</string>
     <string name="signup_button_text">Sign Up</string>
+    <string name="signup_generic_error">There was a problem signing up, sorry!</string>
 
 </resources>

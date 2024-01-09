@@ -18,5 +18,11 @@ class FirebasePluginWrapper : Plugin<Project> {
                 JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME(platform(target.catalog().library("firebase-bom")))
             }
         }
+
+        target.pluginManager.withPlugin("com.android.application") {
+            target.dependencies {
+                JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME(platform(target.catalog().library("firebase-bom")))
+            }
+        }
     }
 }

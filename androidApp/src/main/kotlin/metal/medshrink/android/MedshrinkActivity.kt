@@ -8,11 +8,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
-import metal.medshrink.AppTheme
+import metal.medshrink.compose.resources.AppTheme
 import metal.medshrink.auth.OnboardingScreen
 import metal.medshrink.auth.signin.SignInScreen
 import metal.medshrink.auth.signup.SignUpScreen
 import metal.medshrink.frontpage.FrontpageScreen
+import org.koin.android.ext.android.get
 
 class MedshrinkActivity : ComponentActivity() {
 
@@ -29,7 +30,7 @@ class MedshrinkActivity : ComponentActivity() {
                     startDestination = Screens.Title.route
                 ) {
                     composable(Screens.Title.route) {
-                        TitleScreen(navController)
+                        TitleScreen(navController, get())
                     }
 
                     navigation(

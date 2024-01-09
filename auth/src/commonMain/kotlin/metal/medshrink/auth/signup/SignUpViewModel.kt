@@ -40,6 +40,9 @@ class SignUpViewModel(private val userSignup: UserSignup) : ViewModel() {
 
     fun signUp() {
         validateEmail()
+        _uiState.update {
+            it.copy(signupError = false)
+        }
 
         if (uiState.value.emailError == null) {
             val email = uiState.value.email
@@ -59,8 +62,11 @@ class SignUpViewModel(private val userSignup: UserSignup) : ViewModel() {
                         it.copy(passwordError = e.reason)
                     }
                 } catch (e: FirebaseException) {
-                    // show generic error
                     Logger.e(e, "Generic error")
+
+                    _uiState.update {
+                        it.copy(signupError = true)
+                    }
                 }
             }
         }

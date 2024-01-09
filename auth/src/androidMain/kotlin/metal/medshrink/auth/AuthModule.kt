@@ -11,7 +11,10 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 
 actual fun authModule(): Module = module {
-    viewModel { AuthViewModel() }
+    single { Firebase.auth }
+    single { FirebaseUserMapper() }
+
+    single { CurrentUser(auth = get(), mapper = get()) }
 
     viewModel { SignInViewModel(userSignIn = UserSignIn(auth = Firebase.auth)) }
 

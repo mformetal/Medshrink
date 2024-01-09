@@ -1,8 +1,14 @@
 package metal.medshrink.auth.signup
 
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -21,6 +27,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.unit.dp
 import metal.medshrink.auth.R
 import org.koin.androidx.compose.koinViewModel
 
@@ -96,6 +103,15 @@ fun SignUpScreen(viewModel: SignUpViewModel = koinViewModel(), signupComplete: (
             onClick = viewModel::signUp
         ) {
             Text(text = stringResource(R.string.signup_button_text))
+        }
+
+        AnimatedVisibility(loginState.signupError) {
+            Row(modifier = Modifier.border(color = MaterialTheme.colorScheme.error,
+                width = 2.dp, shape = RoundedCornerShape(5.dp)
+            )) {
+                Icon(imageVector = Icons.Default.Warning, contentDescription = null)
+                Text(text = stringResource(R.string.signup_generic_error))
+            }
         }
     }
 }
