@@ -1,6 +1,7 @@
 package metal.medshrink.app
 
 import android.app.Application
+import metal.medshrink.auth.authModule
 import metal.medshrink.network.networkModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -22,7 +23,7 @@ class MedshrinkApplication : Application() {
         startKoin {
             androidLogger()
             androidContext(this@MedshrinkApplication)
-            modules(appModule, networkModule())
+            modules(appModule, authModule(), networkModule())
         }
     }
 }

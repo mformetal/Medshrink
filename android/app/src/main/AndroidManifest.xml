@@ -5,7 +5,8 @@
 
     <application
         android:name=".MedshrinkApplication"
-        android:label="Medshrink" >
+        android:label="Medshrink"
+        android:theme="@style/Theme.Medshrink.Splash" >
 
         <activity
             android:name=".MedshrinkActivity"

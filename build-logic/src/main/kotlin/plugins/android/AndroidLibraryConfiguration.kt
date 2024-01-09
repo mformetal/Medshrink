@@ -1,7 +1,10 @@
 package plugins.android
 
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
+import com.android.build.gradle.BaseExtension
+import com.android.build.gradle.LibraryExtension
 import com.android.build.gradle.LibraryPlugin
+import com.android.builder.model.AndroidLibrary
 import extensions.catalog
 import extensions.intVersion
 import extensions.library
@@ -40,10 +43,13 @@ open class AndroidLibraryConfiguration @Inject constructor(
     fun KotlinMultiplatformExtension.setupTargets() {
         project.logger.lifecycle("Setting up Android target.")
 
-        mainTarget.value(sourceSets.maybeCreate("androidMain"))
+        val androidMainSourceSet = sourceSets.maybeCreate("androidMain").apply {
+            resources.srcDir("res")
+        }
+        mainTarget.value(androidMainSourceSet)
 
         androidTarget {
-            publishLibraryVariants("release", "debug")
+            publishAllLibraryVariants()
         }
 
         with (project) {
@@ -52,6 +58,16 @@ open class AndroidLibraryConfiguration @Inject constructor(
             dependencies {
                 add(JavaPlugin.IMPLEMENTATION_CONFIGURATION_NAME, catalog().library("android-compose-runtime"))
                 "detektPlugins"("io.gitlab.arturbosch.detekt:detekt-formatting:${catalog().stringVersion("twitterDetektRules")}")
+            }
+
+            configure<LibraryExtension> {
+                sourceSets {
+                    getByName("main") {
+                        res {
+                            srcDir("src/androidMain/res")
+                        }
+                    }
+                }
             }
 
             configure<LibraryAndroidComponentsExtension> {

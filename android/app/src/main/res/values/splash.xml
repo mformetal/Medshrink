@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Medshrink.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">#FFFFFFFF</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_local_hospital</item>
+        <item name="postSplashScreenTheme">@style/Theme.SplashScreen</item>
+    </style>
+
+</resources>

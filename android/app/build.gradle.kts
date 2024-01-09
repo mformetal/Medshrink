@@ -36,9 +36,14 @@ dependencies {
     implementation(libs.android.compose.material3)
     implementation(libs.android.compose.navigation)
     implementation(libs.android.compose.runtime)
+    implementation(libs.android.splashScreen)
     implementation(libs.koin)
     implementation(libs.koin.android)
+    implementation(libs.koin.android.compose)
 
+    implementation(projects.android.composeResources)
+    implementation(projects.auth)
+    implementation(projects.frontpage)
     implementation(projects.network)
     implementation(projects.viewmodel)
 }
