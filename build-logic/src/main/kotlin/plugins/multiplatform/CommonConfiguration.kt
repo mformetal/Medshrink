@@ -30,8 +30,6 @@ open class CommonConfiguration @Inject constructor(private val project: Project,
     fun KotlinMultiplatformExtension.setupTargets() {
         if (mainTarget.isPresent) return
 
-        project.logger.lifecycle("Setting up Common target.")
-
         mainTarget.value(sourceSets.maybeCreate("commonMain"))
         testTarget.value(sourceSets.maybeCreate("commonTest"))
     }

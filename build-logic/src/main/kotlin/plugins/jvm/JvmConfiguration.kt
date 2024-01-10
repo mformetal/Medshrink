@@ -29,8 +29,6 @@ open class JvmConfiguration @Inject constructor(private val project: Project,
     fun KotlinMultiplatformExtension.setupTargets() {
         if (mainTarget.isPresent) return
 
-        project.logger.lifecycle("Setting up JVM target.")
-
         mainTarget.value(sourceSets.maybeCreate("jvmMain"))
     }
 }

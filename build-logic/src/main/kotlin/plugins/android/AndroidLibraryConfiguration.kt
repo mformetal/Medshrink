@@ -45,8 +45,6 @@ open class AndroidLibraryConfiguration @Inject constructor(
     }
 
     fun KotlinMultiplatformExtension.setupTargets() {
-        project.logger.lifecycle("Setting up Android target.")
-
         val androidMainSourceSet = sourceSets.maybeCreate("androidMain").apply {
             resources.srcDir("res")
         }
