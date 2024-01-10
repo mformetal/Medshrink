@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.compose.NavHost
@@ -26,17 +27,20 @@ class MedshrinkActivity : ComponentActivity() {
 
         setContent {
             val currentUser = koinInject<CurrentUser>()
+            val startDestination = remember {
+                if (currentUser.exists) NavGraph.Frontpage.startDestination else NavGraph.Auth.startDestination
+            }
             val navController = rememberNavController()
 
             AppTheme {
                 MainContent(navController) {
                     NavHost(
                         navController = navController,
-                        startDestination = if (currentUser.exists) FrontpageScreen.route else SignInScreen.route
+                        startDestination = startDestination
                     ) {
                         navigation(
                             startDestination = SignInScreen.route,
-                            route = "auth"
+                            route = NavGraph.Auth.startDestination
                         ) {
                             composable(route = SignUpScreen.route) {
                                 SignUpScreen {

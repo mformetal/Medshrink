@@ -16,32 +16,12 @@ class CurrentScreen(
     navController: NavController,
 ) {
 
-    private val allScreens = getAllScreens()
+    var screen by mutableStateOf<Screen?>(null)
+        private set
 
-    private fun getAllScreens(): List<Screen> {
-        var parent = NavGraph::class
-        val screens = mutableListOf<Screen>()
-
-        while (parent.nestedClasses.isNotEmpty()) {
-            @Suppress("UNCHECKED_CAST")
-            val subclasses = parent.nestedClasses as Collection<KClass<NavGraph>>
-
-            screens.addAll(
-                parent.nestedClasses.map { kClass ->
-                    kClass.objectInstance as NavGraph
-                }.mapNotNull { navGraph ->
-                    navGraph.screen
-                }
-            )
-
-            parent = subclasses.first()
-        }
-
-        return screens
-    }
-
-    private fun getCurrentScreen(route: String?): Screen? =
-        allScreens.firstOrNull { screen -> screen.route == route }
+    private val allScreens: List<Screen> = NavItem::class.sealedSubclasses
+        .mapNotNull(KClass<out NavItem>::objectInstance)
+        .map(NavItem::screen)
 
     init {
         navController.currentBackStackEntryFlow
@@ -52,7 +32,6 @@ class CurrentScreen(
             }
             .launchIn(scope)
     }
-
-    var screen by mutableStateOf<Screen?>(null)
-        private set
+    private fun getCurrentScreen(route: String?): Screen? =
+        allScreens.firstOrNull { screen -> screen.route == route }
 }

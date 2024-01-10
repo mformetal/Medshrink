@@ -8,5 +8,4 @@ data class SignInState(
 ) {
 
     val isPasswordVisible: Boolean = password.isNotBlank()
-    val isLoginButtonEnabled: Boolean = email.isNotBlank() && password.isNotBlank()
 }

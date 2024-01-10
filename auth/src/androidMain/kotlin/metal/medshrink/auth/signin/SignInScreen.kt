@@ -62,7 +62,6 @@ fun SignInScreen(
 
         Button(
             modifier = modifier.align(Alignment.CenterHorizontally).padding(vertical = medium_padding),
-            enabled = loginState.isLoginButtonEnabled,
             onClick = viewModel::login,
         ) {
             Text(text = stringResource(R.string.login_button_text))
