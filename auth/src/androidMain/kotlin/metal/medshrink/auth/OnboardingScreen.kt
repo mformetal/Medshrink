@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
-import metal.medshrink.auth.signin.SIGN_IN_SCREEN_ROUTE
+import metal.medshrink.auth.signin.SignInScreen
 import metal.medshrink.compose.resources.large_padding
 
 const val ONBOARDING_ROUTE = "auth_onboarding"
@@ -30,7 +30,7 @@ fun OnboardingScreen(navController: NavController) {
         Button(
             modifier = Modifier.align(Alignment.CenterHorizontally).padding(large_padding),
             onClick = {
-                navController.navigate(SIGN_IN_SCREEN_ROUTE)
+                navController.navigate(SignInScreen.route)
             }
         ) {
             Text(text = stringResource(R.string.get_started_text))

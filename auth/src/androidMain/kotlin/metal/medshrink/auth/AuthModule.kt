@@ -16,7 +16,7 @@ actual fun authModule(): Module = module {
 
     single { CurrentUser(auth = get(), mapper = get()) }
 
-    viewModel { SignInViewModel(userSignIn = UserSignIn(auth = Firebase.auth)) }
+    viewModel { SignInViewModel(userSignIn = UserSignIn(auth = Firebase.auth, firebaseUserMapper = get())) }
 
-    viewModel { SignUpViewModel(userSignup = UserSignup(auth = Firebase.auth)) }
+    viewModel { SignUpViewModel(userSignup = UserSignup(auth = Firebase.auth, firebaseUserMapper = get())) }
 }

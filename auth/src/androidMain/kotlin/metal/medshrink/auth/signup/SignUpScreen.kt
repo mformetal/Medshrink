@@ -1,17 +1,17 @@
 package metal.medshrink.auth.signup
 
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
@@ -23,82 +23,43 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import metal.medshrink.auth.R
+import metal.medshrink.nav.Screen
+import metal.medshrink.nav.ScreenMenuItem
 import org.koin.androidx.compose.koinViewModel
 
-const val SIGN_UP_SCREEN_ROUTE = "auth_sign_up"
+object SignUpScreen : Screen {
+
+    override val route: String = "auth_sign_up"
+    override val navigationIcon: ImageVector = Icons.Default.ArrowBack
+    override val navigationIconContentDescription: String? = null
+    override val actions: List<ScreenMenuItem> = emptyList()
+}
 
 @Composable
-fun SignUpScreen(viewModel: SignUpViewModel = koinViewModel(), signupComplete: () -> Unit) {
-    Column(modifier = Modifier.fillMaxSize()) {
+fun SignUpScreen(
+    modifier: Modifier = Modifier,
+    viewModel: SignUpViewModel = koinViewModel(),
+    signupComplete: () -> Unit
+) {
+    Column(modifier = modifier, verticalArrangement = Arrangement.Center) {
         val loginState by viewModel.uiState.collectAsState()
         if (loginState.signUpComplete) {
             signupComplete()
         }
 
-        Text(
-            text = "SOME BLURB WILL GO HERE WITH SOME LOGO MAYBE IDK WHO CARES",
-        )
+        EmailField(loginState, viewModel)
 
-        OutlinedTextField(
-            modifier = Modifier.align(Alignment.CenterHorizontally),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
-            value = loginState.email,
-            isError = loginState.emailError != null,
-            singleLine = true,
-            keyboardActions = KeyboardActions(onDone = {
-                viewModel.validateEmail()
-            }),
-            supportingText = {
-                loginState.emailError?.let { errorText ->
-                    Text(
-                        modifier = Modifier.fillMaxWidth(),
-                        text = errorText,
-                        color = MaterialTheme.colorScheme.error
-                    )
-                }
-            },
-            trailingIcon = {
-                if (loginState.emailError != null) {
-                    Icon(Icons.Filled.Warning, loginState.emailError, tint = MaterialTheme.colorScheme.error)
-                }
-            },
-            onValueChange = viewModel::email,
-            label = { Text(text = stringResource(R.string.email_label_text)) }
-        )
-
-        OutlinedTextField(
-            modifier = Modifier.align(Alignment.CenterHorizontally),
-            visualTransformation = if (loginState.isPasswordVisible) PasswordVisualTransformation() else VisualTransformation.None,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            value = loginState.password,
-            isError = loginState.passwordError != null,
-            singleLine = true,
-            supportingText = {
-                loginState.passwordError?.let { errorText ->
-                    Text(
-                        modifier = Modifier.fillMaxWidth(),
-                        text = errorText,
-                        color = MaterialTheme.colorScheme.error
-                    )
-                }
-            },
-            trailingIcon = {
-                if (loginState.passwordError != null) {
-                    Icon(Icons.Filled.Warning, loginState.passwordError, tint = MaterialTheme.colorScheme.error)
-                }
-            },
-            onValueChange = viewModel::password,
-            label = { Text(text = stringResource(R.string.password_label_text)) }
-        )
+        PasswordField(loginState, viewModel)
 
         Button(
-            modifier = Modifier.align(Alignment.CenterHorizontally),
+            modifier = modifier.align(Alignment.CenterHorizontally),
             enabled = loginState.isLoginButtonEnabled,
             onClick = viewModel::signUp
         ) {
@@ -106,12 +67,81 @@ fun SignUpScreen(viewModel: SignUpViewModel = koinViewModel(), signupComplete: (
         }
 
         AnimatedVisibility(loginState.signupError) {
-            Row(modifier = Modifier.border(color = MaterialTheme.colorScheme.error,
-                width = 2.dp, shape = RoundedCornerShape(5.dp)
-            )) {
+            Row(
+                modifier = modifier.border(
+                    color = MaterialTheme.colorScheme.error,
+                    width = 2.dp,
+                    shape = RoundedCornerShape(5.dp)
+                )
+            ) {
                 Icon(imageVector = Icons.Default.Warning, contentDescription = null)
                 Text(text = stringResource(R.string.signup_generic_error))
             }
         }
     }
+}
+
+@Composable
+private fun ColumnScope.EmailField(
+    loginState: SignUpState,
+    viewModel: SignUpViewModel
+) {
+    OutlinedTextField(
+        modifier = Modifier.Companion.align(Alignment.CenterHorizontally),
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
+        value = loginState.email,
+        isError = loginState.emailError != null,
+        singleLine = true,
+        keyboardActions = KeyboardActions(onDone = {
+            viewModel.validateEmail()
+        }),
+        supportingText = {
+            loginState.emailError?.let { errorText ->
+                Text(
+                    modifier = Modifier.Companion.align(Alignment.CenterHorizontally),
+                    text = errorText,
+                    color = MaterialTheme.colorScheme.error
+                )
+            }
+        },
+        trailingIcon = {
+            if (loginState.emailError != null) {
+                Icon(Icons.Filled.Warning, loginState.emailError, tint = MaterialTheme.colorScheme.error)
+            }
+        },
+        onValueChange = viewModel::email,
+        label = { Text(text = stringResource(R.string.email_label_text)) }
+    )
+}
+
+@Composable
+private fun ColumnScope.PasswordField(
+    loginState: SignUpState,
+    viewModel: SignUpViewModel
+) {
+    OutlinedTextField(
+        modifier = Modifier.Companion.align(Alignment.CenterHorizontally),
+        visualTransformation =
+        if (loginState.isPasswordVisible) PasswordVisualTransformation() else VisualTransformation.None,
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+        value = loginState.password,
+        isError = loginState.passwordError != null,
+        singleLine = true,
+        supportingText = {
+            loginState.passwordError?.let { errorText ->
+                Text(
+                    modifier = Modifier.fillMaxWidth(),
+                    text = errorText,
+                    color = MaterialTheme.colorScheme.error
+                )
+            }
+        },
+        trailingIcon = {
+            if (loginState.passwordError != null) {
+                Icon(Icons.Filled.Warning, loginState.passwordError, tint = MaterialTheme.colorScheme.error)
+            }
+        },
+        onValueChange = viewModel::password,
+        label = { Text(text = stringResource(R.string.password_label_text)) }
+    )
 }

@@ -1,6 +1,5 @@
 plugins {
     id("multiplatform")
-    id("firebase")
 }
 
 multiplatform {
@@ -9,6 +8,9 @@ multiplatform {
 
         main {
             dependencies {
+//                implementation(platform(libs.firebase.bom))
+                implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+
                 implementation(libs.android.compose.runtime)
                 implementation(libs.koin.android)
                 implementation(libs.android.compose.material3)
@@ -21,8 +23,9 @@ multiplatform {
 
                 implementation(libs.firebase.android.auth)
 
-                implementation(projects.composeResources)
-                implementation(projects.xmlResources)
+                implementation(projects.android.composeResources)
+                implementation(projects.android.nav)
+                implementation(projects.android.xmlResources)
 
                 api(libs.android.viewmodel)
             }

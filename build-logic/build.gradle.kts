@@ -49,11 +49,6 @@ gradlePlugin {
             implementationClass = "plugins.backend.BackendApplicationPlugin"
         }
 
-        register("FirebasePlugin") {
-            id = "firebase"
-            implementationClass = "plugins.FirebasePluginWrapper"
-        }
-
         register("SettingsPlugin") {
             id = "settings"
             implementationClass = "plugins.SettingsPlugin"

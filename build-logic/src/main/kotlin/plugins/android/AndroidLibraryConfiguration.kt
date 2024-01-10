@@ -20,6 +20,10 @@ import org.gradle.kotlin.dsl.property
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import javax.inject.Inject
+import org.gradle.kotlin.dsl.named
+import org.gradle.kotlin.dsl.withType
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompilationTask
 
 open class AndroidLibraryConfiguration @Inject constructor(
     private val objects: ObjectFactory,
@@ -89,6 +93,24 @@ open class AndroidLibraryConfiguration @Inject constructor(
                     libraryExtension.compileSdk = catalog().intVersion("androidCompileSdk")
                 }
             }
+
+            tasks.withType<KotlinCompilationTask<*>>()
+                .configureEach {
+                    compilerOptions {
+                        allWarningsAsErrors.set(true)
+
+                        val hasComposeMaterial3Dependency = configurations.any { configuration ->
+                            configuration.dependencies.any { dependency ->
+                                dependency.run {
+                                    group == "androidx.compose.material3" && name == "material3"
+                                }
+                            }
+                        }
+                        if (hasComposeMaterial3Dependency) {
+                            freeCompilerArgs.addAll("-opt-in=androidx.compose.material3.ExperimentalMaterial3Api")
+                        }
+                    }
+                }
         }
     }
 }

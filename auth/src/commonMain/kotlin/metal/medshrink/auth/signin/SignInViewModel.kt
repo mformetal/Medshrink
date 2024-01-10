@@ -1,7 +1,6 @@
 package metal.medshrink.auth.signin
 
 import com.google.firebase.FirebaseException
-import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -18,7 +17,7 @@ class SignInViewModel(private val userSignIn: UserSignIn) : ViewModel() {
 
     fun email(value: String) {
         _uiState.update {
-            it.copy(email = value)
+            it.copy(email = value.trim())
         }
     }
 
@@ -34,7 +33,7 @@ class SignInViewModel(private val userSignIn: UserSignIn) : ViewModel() {
 
     fun password(value: String) {
         _uiState.update {
-            it.copy(password = value)
+            it.copy(password = value.trim())
         }
     }
 

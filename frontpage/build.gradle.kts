@@ -15,6 +15,7 @@ multiplatform {
                 implementation(libs.android.compose.runtime)
                 implementation(libs.android.compose.viewmodel)
                 implementation(libs.koin.android.compose)
+                implementation(projects.android.nav)
                 api(libs.android.viewmodel)
             }
         }

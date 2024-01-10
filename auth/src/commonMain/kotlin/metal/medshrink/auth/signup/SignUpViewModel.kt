@@ -1,6 +1,7 @@
 package metal.medshrink.auth.signup
 
 import com.google.firebase.FirebaseException
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseAuthWeakPasswordException
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -18,7 +19,7 @@ class SignUpViewModel(private val userSignup: UserSignup) : ViewModel() {
 
     fun email(value: String) {
         _uiState.update {
-            it.copy(email = value)
+            it.copy(email = value.trim())
         }
     }
 
@@ -34,7 +35,7 @@ class SignUpViewModel(private val userSignup: UserSignup) : ViewModel() {
 
     fun password(value: String) {
         _uiState.update {
-            it.copy(password = value)
+            it.copy(password = value.trim())
         }
     }
 
@@ -52,14 +53,18 @@ class SignUpViewModel(private val userSignup: UserSignup) : ViewModel() {
                 try {
                     userSignup.signup(email, password)
                         .fold(onSuccess = {
-                                          _uiState.update {
-                                              it.copy(signUpComplete = true)
-                                          }
+                            _uiState.update {
+                                it.copy(signUpComplete = true)
+                            }
                         }, onFailure = {
                         })
                 } catch (e: FirebaseAuthWeakPasswordException) {
                     _uiState.update {
                         it.copy(passwordError = e.reason)
+                    }
+                } catch (e: FirebaseAuthUserCollisionException) {
+                    _uiState.update {
+                        it.copy(emailError = e.message)
                     }
                 } catch (e: FirebaseException) {
                     Logger.e(e, "Generic error")

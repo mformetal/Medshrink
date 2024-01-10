@@ -1,6 +1,7 @@
 package plugins.android
 
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
+import com.android.build.api.variant.TestAndroidComponentsExtension
 import com.android.build.gradle.LibraryPlugin
 import extensions.catalog
 import extensions.intVersion
@@ -12,6 +13,7 @@ import org.gradle.api.plugins.JavaPlugin
 import org.gradle.kotlin.dsl.apply
 import org.gradle.kotlin.dsl.configure
 import org.gradle.kotlin.dsl.dependencies
+import org.jetbrains.kotlin.gradle.dsl.KotlinAndroidProjectExtension
 import org.jetbrains.kotlin.gradle.dsl.kotlinExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinAndroidPluginWrapper
 import plugins.lint.LintPlugin
@@ -30,6 +32,13 @@ class AndroidLibPlugin : Plugin<Project> {
                 "detektPlugins"("io.gitlab.arturbosch.detekt:detekt-formatting:${catalog().stringVersion("twitterDetektRules")}")
             }
 
+            configure<KotlinAndroidProjectExtension> {
+                compilerOptions {
+                    allWarningsAsErrors.set(true)
+                    freeCompilerArgs.addAll("-opt-in=androidx.compose.material3.ExperimentalMaterial3Api")
+                }
+            }
+
             configure<LibraryAndroidComponentsExtension> {
                 finalizeDsl { libraryExtension ->
                     libraryExtension.composeOptions {
@@ -38,6 +47,10 @@ class AndroidLibPlugin : Plugin<Project> {
 
                     libraryExtension.buildFeatures {
                         compose = true
+                    }
+
+                    libraryExtension.defaultConfig {
+                        minSdk = catalog().intVersion("androidMinSdk")
                     }
 
                     libraryExtension.compileSdk = catalog().intVersion("androidCompileSdk")

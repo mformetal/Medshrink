@@ -34,6 +34,7 @@ class AndroidAppPlugin : Plugin<Project> {
             configure<KotlinAndroidProjectExtension> {
                 compilerOptions {
                     allWarningsAsErrors.set(true)
+                    freeCompilerArgs.addAll("-opt-in=androidx.compose.material3.ExperimentalMaterial3Api")
                 }
             }
 

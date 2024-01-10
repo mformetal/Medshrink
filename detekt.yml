@@ -9,3 +9,6 @@ naming:
 style:
   MagicNumber:
     ignoreLocalVariableDeclaration: false
+    excludes:
+      - '**/Theme.kt'
+      - '**/Color.kt'
