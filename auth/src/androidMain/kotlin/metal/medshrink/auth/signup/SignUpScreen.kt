@@ -31,15 +31,12 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import metal.medshrink.auth.R
 import metal.medshrink.nav.Screen
-import metal.medshrink.nav.ScreenMenuItem
 import org.koin.androidx.compose.koinViewModel
 
 object SignUpScreen : Screen {
 
     override val route: String = "auth_sign_up"
-    override val navigationIcon: ImageVector = Icons.Default.ArrowBack
-    override val navigationIconContentDescription: String? = null
-    override val actions: List<ScreenMenuItem> = emptyList()
+    override fun navigationIcon(): ImageVector = Icons.Default.ArrowBack
 }
 
 @Composable

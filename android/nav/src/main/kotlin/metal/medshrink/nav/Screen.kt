@@ -4,7 +4,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 interface Screen {
 
     val route: String
-    val navigationIcon: ImageVector?
-    val navigationIconContentDescription: String?
-    val actions: List<ScreenMenuItem>
+    fun navigationIcon(): ImageVector? = null
+    fun navigationIconContentDescription(): String? = null
 }

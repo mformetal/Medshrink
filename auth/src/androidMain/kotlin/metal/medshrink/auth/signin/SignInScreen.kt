@@ -16,7 +16,6 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
@@ -29,15 +28,11 @@ import metal.medshrink.auth.R
 import metal.medshrink.auth.signup.SignUpScreen
 import metal.medshrink.compose.resources.medium_padding
 import metal.medshrink.nav.Screen
-import metal.medshrink.nav.ScreenMenuItem
 import org.koin.androidx.compose.koinViewModel
 
 object SignInScreen : Screen {
 
     override val route: String = "auth_sign_in"
-    override val navigationIcon: ImageVector? = null
-    override val navigationIconContentDescription: String? = null
-    override val actions: List<ScreenMenuItem> = emptyList()
 }
 
 @Composable

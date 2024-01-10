@@ -51,27 +51,19 @@ fun MainContent(
                 },
                 navigationIcon = {
                     currentScreen.screen?.let { screenContract ->
-                        screenContract.navigationIcon?.let { icon ->
+                        screenContract.navigationIcon()?.let { icon ->
                             IconButton(onClick = navigationIconClickHandler::clicked) {
                                 Icon(
                                     imageVector = icon,
-                                    contentDescription = screenContract.navigationIconContentDescription
+                                    contentDescription = screenContract.navigationIconContentDescription()
                                 )
                             }
                         }
                     }
-                },
-                actions = {
-                    currentScreen.screen?.actions?.forEach { screenMenuItem ->
-                        IconButton(onClick = screenMenuItem.onClick) {
-                            Icon(
-                                imageVector = screenMenuItem.icon,
-                                contentDescription = screenMenuItem.contentDescription
-                            )
-                        }
-                    }
                 }
             )
+        },
+        bottomBar = {
         },
         content = { paddingValues ->
             Surface(
